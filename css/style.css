@@ -44,3 +44,9 @@
 
     background-color: #ffffff;
 }
+
+.total {
+    font-weight: 700;
+    font-size: 30px;
+    color: #cc0605;
+}

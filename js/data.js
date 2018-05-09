@@ -1,4 +1,9 @@
 'use strict';
 (function (){
-    let totalValue = 50000;
+    window.data = {
+        total: {
+            value: 50000,
+            currency: '₽'
+        }
+    }
 })();
