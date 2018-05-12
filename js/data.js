@@ -2,7 +2,7 @@
 (function (){
     window.data = {
         total: {
-            value: 50000,
+            value: 0,
             currency: '₽'
         }
     }
