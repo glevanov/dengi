@@ -1,6 +1,7 @@
-# Файлы и папки операционной системы
 .DS_Store
-Thumbs.db
-
-# Файлы редактора
 .idea
+.cache
+Thumbs.db
+node_modules/
+dist/
+*.log
