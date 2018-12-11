@@ -1,0 +1,27 @@
+.asset {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.asset__icon {
+  margin: 0;
+  margin-right: 10px;
+}
+
+.asset__content {
+  display: flex;
+  flex-direction: column;
+}
+
+.asset__value {
+  margin: 0;
+}
+
+.asset__name {
+  margin: 0;
+}
+
+.asset__type {
+  margin: 0;
+}
