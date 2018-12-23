@@ -15,12 +15,12 @@
 
 <script>
   export default {
-    data: () => ({
-      currency: '₽',
-      custodian: 'Альфа',
-      type: 'Вклад',
-      value: '4,000,000.00'
-    }),
+    props: [
+      'currency',
+      'custodian',
+      'type',
+      'value'
+    ],
     name: 'Account'
   }
 </script>
