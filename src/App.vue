@@ -23,7 +23,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 320px;
     margin-left: auto;
     margin-right: auto;
     color: #000000;
@@ -36,8 +35,6 @@
     Cantarell, Fira Sans, Droid Sans,
     Helvetica Neue,
     sans-serif;
-
-    border: 1px dotted black;
   }
 
   .logo {

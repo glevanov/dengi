@@ -31,10 +31,7 @@
     flex-direction: row;
     background-color: #ffffff;
     border-radius: 6px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding: 10px;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
   }
 
