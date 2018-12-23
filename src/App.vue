@@ -1,18 +1,19 @@
 <template>
   <div class="container">
     <h1 class="logo visually-hidden">#деньги</h1>
-    <img class="chart" src="img/circle.svg" alt="График всех активов">
-    <p class="total">₽ 4,000,000.00</p>
+    <Stats></Stats>
     <Accounts></Accounts>
   </div>
 </template>
 
 <script>
   import Accounts from './Accounts/Accounts.vue';
+  import Stats from './Stats/Stats.vue';
 
   export default {
     components: {
-      Accounts
+      Accounts,
+      Stats
     }
   }
 </script>
@@ -23,7 +24,24 @@
     flex-direction: column;
     align-items: center;
     max-width: 320px;
-    border: 1px dotted black;
+    margin-left: auto;
+    margin-right: auto;
+    color: #000000;
     background-color: #f1f2f6;
+
+    font-family: -apple-system,
+    BlinkMacSystemFont,
+    Segoe UI, Roboto,
+    Oxygen, Ubuntu,
+    Cantarell, Fira Sans, Droid Sans,
+    Helvetica Neue,
+    sans-serif;
+
+    border: 1px dotted black;
+  }
+
+  .logo {
+    margin: 0;
+    font-size: 32px;
   }
 </style>

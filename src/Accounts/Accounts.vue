@@ -1,5 +1,5 @@
 <template>
-  <ul class="feed">
+  <ul class="accounts">
     <Account></Account>
     <Account></Account>
     <Account></Account>
@@ -18,12 +18,13 @@
 </script>
 
 <style scoped>
-  .feed {
+  .accounts {
     list-style: none;
     margin: 0;
     padding: 0;
     width: 90%;
     display: grid;
     grid-gap: 15px;
+    margin-bottom: 20px;
   }
 </style>
