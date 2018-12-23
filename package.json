@@ -6,7 +6,8 @@
     "dev": "parcel src/index.html",
     "build": "parcel build src/index.html --public-url ./",
     "gh-pages": "gh-pages -d dist",
-    "deploy": "npm run build && npm run gh-pages"
+    "deploy": "npm run build && npm run gh-pages",
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,10 @@
   "homepage": "https://github.com/glevanov/dengi#readme",
   "devDependencies": {
     "@vue/component-compiler-utils": "^2.3.1",
+    "eslint": "^5.11.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-vue": "^5.0.0",
     "gh-pages": "^2.0.1",
     "parcel-bundler": "^1.10.3",
     "parcel-plugin-clean-dist": "0.0.6",
