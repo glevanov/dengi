@@ -1,0 +1,86 @@
+<template>
+  <li class="feed__item">
+    <div class="account">
+      <p class="account__icon">{{ currency }}</p>
+      <div class="account__content">
+        <p class="account__value">{{ value }}</p>
+        <div class="account__wrap">
+          <p class="account__name">{{ custodian }}</p>
+          <p class="account__type">{{ type }}</p>
+        </div>
+      </div>
+    </div>
+  </li>
+</template>
+
+<script>
+  export default {
+    data: () => ({
+      currency: '₽',
+      custodian: 'Альфа',
+      type: 'Вклад',
+      value: '4,000,000.00'
+    }),
+    name: 'Account'
+  }
+</script>
+
+<style scoped>
+  .account {
+    display: flex;
+    flex-direction: row;
+    background-color: #ffffff;
+    border-radius: 6px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  .account__icon {
+    margin: 0;
+    margin-right: 10px;
+    height: 40px;
+    width: 40px;
+    background-color: #4287f5;
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    font-weight: bold;
+    flex-shrink: 0;
+  }
+
+  .account__content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .account__wrap {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .account__value {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #000000;
+  }
+
+  .account__name {
+    margin: 0;
+    font-size: 14px;
+    margin-right: 5px;
+    opacity: 0.75;
+  }
+
+  .account__type {
+    margin: 0;
+    font-size: 14px;
+    opacity: 0.75;
+  }
+</style>
