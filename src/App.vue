@@ -1,20 +1,48 @@
 <template>
   <div class="container">
     <h1 class="logo visually-hidden">#деньги</h1>
-    <Stats></Stats>
-    <Accounts></Accounts>
+    <Stats :accounts="accounts"></Stats>
+    <Accounts :accounts="accounts"></Accounts>
   </div>
 </template>
 
 <script>
-  import Accounts from './Accounts/Accounts.vue';
-  import Stats from './Stats/Stats.vue';
+  import Accounts from './Accounts/Accounts.vue'
+  import Stats from './Stats/Stats.vue'
 
   export default {
     components: {
       Accounts,
       Stats
-    }
+    },
+    data: () => ({
+      accounts: [
+        {
+          currency: '₽',
+          custodian: 'Тиньков',
+          type: 'Вклад',
+          value: 1400000
+        },
+        {
+          currency: '₽',
+          custodian: 'Альфа',
+          type: 'Вклад',
+          value: 1034102.45
+        },
+        {
+          currency: '₽',
+          custodian: 'Альфа-Директ',
+          type: 'ETF',
+          value: 2201823.13
+        },
+        {
+          currency: '₽',
+          custodian: 'Альфа',
+          type: 'ПИФ',
+          value: 876403.35
+        }
+      ]
+    })
   }
 </script>
 

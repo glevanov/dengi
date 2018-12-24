@@ -1,16 +1,29 @@
 <template>
-    <div class="total">
-      <p class="total__title">итого:</p>
-      <p class="total__value">₽ {{ value }}</p>
-    </div>
+  <div class="total">
+    <p class="total__title">итого:</p>
+    <p class="total__value">₽ {{ getFormattedNum(total) }}</p>
+  </div>
 </template>
 
 <script>
+  import getFormattedNum from '../getFormattedNum.js'
+
   export default {
     name: 'Total',
-    data: () => ({
-      value: '4,000,000.00'
-    })
+    computed: {
+      total () {
+        return this.accounts.reduce(
+          (acc, it) => it.value + acc,
+          0
+        )
+      }
+    },
+    props: [
+      'accounts'
+    ],
+    methods: {
+      getFormattedNum
+    }
   }
 </script>
 

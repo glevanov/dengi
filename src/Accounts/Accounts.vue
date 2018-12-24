@@ -8,41 +8,16 @@
 </template>
 
 <script>
-  import Account from './Account.vue';
+  import Account from './Account.vue'
 
   export default {
     name: 'Accounts',
     components: {
       Account
     },
-    data: () => ({
-      accounts: [
-        {
-          currency: '₽',
-          custodian: 'Тиньков',
-          type: 'Вклад',
-          value: '1,400,000.00'
-        },
-        {
-          currency: '$',
-          custodian: 'Альфа',
-          type: 'Вклад',
-          value: '1,034,102.45'
-        },
-        {
-          currency: '€',
-          custodian: 'Альфа-Директ',
-          type: 'ETF',
-          value: '2,201,823.13'
-        },
-        {
-          currency: '₽',
-          custodian: 'Альфа',
-          type: 'ПИФ',
-          value: '876,403.35'
-        }
-      ]
-    })
+    props: [
+      'accounts'
+    ]
   }
 </script>
 

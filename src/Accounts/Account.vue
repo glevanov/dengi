@@ -3,7 +3,7 @@
     <div class="account">
       <p class="account__icon">{{ account.currency }}</p>
       <div class="account__content">
-        <p class="account__value">{{ account.value }}</p>
+        <p class="account__value">{{ getFormattedNum(account.value) }}</p>
         <div class="account__wrap">
           <p class="account__name">{{ account.custodian }}</p>
           <p class="account__type">{{ account.type }}</p>
@@ -14,11 +14,16 @@
 </template>
 
 <script>
+  import getFormattedNum from '../getFormattedNum.js'
+
   export default {
     props: [
       'account'
     ],
-    name: 'Account'
+    name: 'Account',
+    methods: {
+      getFormattedNum
+    }
   }
 </script>
 
@@ -69,12 +74,11 @@
     margin: 0;
     font-size: 14px;
     margin-right: 5px;
-    opacity: 0.75;
   }
 
   .account__type {
     margin: 0;
     font-size: 14px;
-    opacity: 0.75;
+    opacity: 0.5;
   }
 </style>
