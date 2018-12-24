@@ -27,6 +27,7 @@
     margin-right: auto;
     color: #000000;
     background-color: #f1f2f6;
+    max-width: 500px;
 
     font-family: -apple-system,
     BlinkMacSystemFont,

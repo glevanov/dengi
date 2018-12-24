@@ -1,12 +1,12 @@
 <template>
   <li class="feed__item">
     <div class="account">
-      <p class="account__icon">{{ currency }}</p>
+      <p class="account__icon">{{ account.currency }}</p>
       <div class="account__content">
-        <p class="account__value">{{ value }}</p>
+        <p class="account__value">{{ account.value }}</p>
         <div class="account__wrap">
-          <p class="account__name">{{ custodian }}</p>
-          <p class="account__type">{{ type }}</p>
+          <p class="account__name">{{ account.custodian }}</p>
+          <p class="account__type">{{ account.type }}</p>
         </div>
       </div>
     </div>
@@ -16,10 +16,7 @@
 <script>
   export default {
     props: [
-      'currency',
-      'custodian',
-      'type',
-      'value'
+      'account'
     ],
     name: 'Account'
   }

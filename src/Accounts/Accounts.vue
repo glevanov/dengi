@@ -2,10 +2,7 @@
   <ul class="accounts">
     <Account
       v-for="account in accounts"
-      :currency="account.currency"
-      :custodian="account.custodian"
-      :type="account.type"
-      :value="account.value"
+      :account="account"
     ></Account>
   </ul>
 </template>
