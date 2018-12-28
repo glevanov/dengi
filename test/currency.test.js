@@ -68,6 +68,6 @@ test('formatNum returns a string', () => {
 
 test('getTotal calculates correct total', () => {
   expect(getTotalRUB(accounts)).toBe(2434102.45);
-  expect(getTotalUSD(accounts, rateUSD)).toBe(731521.7);
+  expect(getTotalUSD(accounts, rateUSD)).toBe(731521.7000000001);
   expect(getTotalEUR(accounts, rateEUR)).toBe(186814.4);
 });

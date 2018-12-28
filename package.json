@@ -7,7 +7,7 @@
     "build": "parcel build src/index.html --public-url ./",
     "gh-pages": "gh-pages -d dist",
     "deploy": "npm run build && npm run gh-pages",
-    "lint": "eslint .",
+    "lint": "eslint . --fix",
     "test": "jest"
   },
   "repository": {
