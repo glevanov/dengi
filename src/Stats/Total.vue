@@ -1,12 +1,12 @@
 <template>
   <div class="total">
     <p class="total__title">итого:</p>
-    <p class="total__value">₽ {{ getFormattedNum(total) }}</p>
+    <p class="total__value">₽ {{ formatNum(total) }}</p>
   </div>
 </template>
 
 <script>
-  import getFormattedNum from '../getFormattedNum.js'
+  import getFormattedNum from '../formatNum.js'
 
   export default {
     name: 'Total',
