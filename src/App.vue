@@ -20,56 +20,56 @@
         {
           currency: {
             code: 'RUB',
-            text: '₽'
+            text: '₽',
           },
           custodian: 'Тиньков',
           type: 'Вклад',
-          value: 1400000
+          value: 1400000,
         },
         {
           currency: {
             code: 'RUB',
-            text: '₽'
+            text: '₽',
           },
           custodian: 'Альфа',
           type: 'Вклад',
-          value: 1034102.45
-        },
-        {
-          currency: {
-            code: 'RUB',
-            text: '₽'
-          },
-          custodian: 'Альфа-Директ',
-          type: 'ETF',
-          value: 2201823.13
-        },
-        {
-          currency: {
-            code: 'RUB',
-            text: '₽'
-          },
-          custodian: 'Альфа',
-          type: 'ПИФ',
-          value: 876403.35
+          value: 1034102.45,
         },
         {
           currency: {
             code: 'USD',
-            text: '$'
+            text: '$',
           },
           custodian: 'Альфа',
           type: 'ETF',
-          value: 10223.11
+          value: 10223.11,
         },
         {
           currency: {
             code: 'USD',
-            text: '$'
+            text: '$',
           },
           custodian: 'Тиньков',
           type: 'Вклад',
-          value: 1031.07
+          value: 1031.07,
+        },
+        {
+          currency: {
+            code: 'EUR',
+            text: '€',
+          },
+          custodian: 'Открытие',
+          type: 'Вклад',
+          value: 2030.81,
+        },
+        {
+          currency: {
+            code: 'EUR',
+            text: '€',
+          },
+          custodian: 'МКБ',
+          type: 'Вклад',
+          value: 304.37,
         }
       ]
     })

@@ -6,23 +6,29 @@
 </template>
 
 <script>
-  import getFormattedNum from '../formatNum.js'
+  import { formatNum, getTotalUSD, getTotalRUB, getTotalEUR } from '../currency'
 
   export default {
     name: 'Total',
     computed: {
+      totalRUB () {
+        return getTotalRUB(this.accounts)
+      },
+      totalUSD () {
+        return getTotalUSD(this.accounts, 65)
+      },
+      totalEUR () {
+        return getTotalEUR(this.accounts, 80)
+      },
       total () {
-        return this.accounts.reduce(
-          (acc, it) => it.value + acc,
-          0
-        )
+        return this.totalRUB + this.totalUSD + this.totalEUR
       }
     },
     props: [
       'accounts'
     ],
     methods: {
-      getFormattedNum
+      formatNum
     }
   }
 </script>

@@ -1,7 +1,7 @@
 <template>
   <li class="feed__item">
     <div class="account">
-      <p class="account__icon">{{ account.currency }}</p>
+      <p class="account__icon">{{ account.currency.text }}</p>
       <div class="account__content">
         <p class="account__value">{{ formatNum(account.value) }}</p>
         <div class="account__wrap">
@@ -14,7 +14,7 @@
 </template>
 
 <script>
-  import getFormattedNum from '../formatNum.js'
+  import {formatNum} from '../currency.js'
 
   export default {
     props: [
@@ -22,7 +22,7 @@
     ],
     name: 'Account',
     methods: {
-      getFormattedNum
+      formatNum
     }
   }
 </script>
