@@ -15,17 +15,18 @@
         return getTotalRUB(this.accounts)
       },
       totalUSD () {
-        return getTotalUSD(this.accounts, 65)
+        return getTotalUSD(this.accounts, this.rates.USD)
       },
       totalEUR () {
-        return getTotalEUR(this.accounts, 80)
+        return getTotalEUR(this.accounts, this.rates.EUR)
       },
       total () {
         return this.totalRUB + this.totalUSD + this.totalEUR
       }
     },
     props: [
-      'accounts'
+      'accounts',
+      'rates'
     ],
     methods: {
       formatNum

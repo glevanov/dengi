@@ -4,16 +4,19 @@
       v-for="account in accounts"
       :account="account"
     ></Account>
+    <newAccount></newAccount>
   </ul>
 </template>
 
 <script>
   import Account from './Account.vue'
+  import newAccount from './newAccount.vue'
 
   export default {
     name: 'Accounts',
     components: {
-      Account
+      Account,
+      newAccount
     },
     props: [
       'accounts'

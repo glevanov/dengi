@@ -1,21 +1,30 @@
 <template>
   <div class="container">
     <h1 class="logo visually-hidden">#деньги</h1>
-    <Stats :accounts="accounts"></Stats>
+    <Stats
+      :rates="rates"
+      :accounts="accounts"></Stats>
     <Accounts :accounts="accounts"></Accounts>
+    <Rates :rates="rates"></Rates>
   </div>
 </template>
 
 <script>
   import Accounts from './Accounts/Accounts.vue'
   import Stats from './Stats/Stats.vue'
+  import Rates from './Rates/Rates.vue'
 
   export default {
     components: {
+      Rates,
       Accounts,
       Stats
     },
     data: () => ({
+      rates: {
+        USD: 69.4706,
+        EUR: 79.4605
+      },
       accounts: [
         {
           currency: {

@@ -1,7 +1,9 @@
 <template>
   <div class="stats">
     <img class="stats__image" src="./circle.svg" alt="График всех активов">
-    <Total :accounts="accounts"></Total>
+    <Total
+      :rates="rates"
+      :accounts="accounts"></Total>
   </div>
 </template>
 
@@ -14,7 +16,8 @@
       Total
     },
     props: [
-      'accounts'
+      'accounts',
+      'rates'
     ]
   }
 </script>
