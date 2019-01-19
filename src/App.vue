@@ -4,7 +4,8 @@
     <stats></stats>
     <accounts></accounts>
     <rates></rates>
-    <new-account-modal></new-account-modal>
+    <new-account-modal
+    v-if="this.$store.state.isAccountModalVisible"></new-account-modal>
   </div>
 </template>
 

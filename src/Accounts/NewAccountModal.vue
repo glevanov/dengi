@@ -23,13 +23,19 @@
             <input type="text" id="custodian">
           </li>
           <li class="fields__field">
-            <label for="type">Вид</label>
+            <label for="type">Вид актива</label>
             <input type="text" id="type">
           </li>
         </ul>
         <div class="buttons">
-          <button class="buttons__button buttons__button--remove">Назад</button>
-          <button class="buttons__button buttons__button--add">Добавить</button>
+          <button type="button" class="buttons__button buttons__button--remove"
+                  @click="switchModal"
+          >Назад
+          </button>
+          <button type="submit" class="buttons__button buttons__button--add"
+                  @click.prevent="switchModal"
+          >Добавить
+          </button>
         </div>
       </form>
     </div>
@@ -38,7 +44,12 @@
 
 <script>
   export default {
-    name: 'NewAccountModal'
+    name: 'NewAccountModal',
+    methods: {
+      switchModal () {
+        this.$store.commit('switchModal')
+      }
+    }
   }
 </script>
 
@@ -70,6 +81,7 @@
     padding-left: 5%;
     padding-top: 15px;
     padding-bottom: 15px;
+    font-size: 26px;
   }
 
   .fields {
@@ -155,8 +167,14 @@
     font-weight: 500;
     letter-spacing: 1px;
   }
+
   .buttons__button:last-of-type {
     margin-right: 0;
+  }
+
+  .buttons__button:focus {
+    outline: none;
+    box-shadow: 0 0 10px 0 #4287f5;
   }
 
   .buttons__button--add {

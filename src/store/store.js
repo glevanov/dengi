@@ -1,3 +1,4 @@
+/* eslint no-param-reassign: ["error", { "props": false }] */
 import Vue from 'vue';
 import Vuex from 'vuex';
 
@@ -5,15 +6,20 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   mutations: {
-    deleteAccount: (state, index) => {
-      state.accounts.splice(index, 1)
-    }
+    deleteAccount(state, index) {
+      state.accounts.splice(index, 1);
+    },
+    switchModal(state) {
+      window.scrollTo(0, 0);
+      state.isAccountModalVisible = !state.isAccountModalVisible;
+    },
   },
   state: {
     rates: {
       USD: 69.4706,
       EUR: 79.4605,
     },
+    isAccountModalVisible: false,
     accounts: [
       {
         currency: {

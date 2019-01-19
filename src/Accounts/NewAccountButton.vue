@@ -1,5 +1,6 @@
 <template>
-  <li class="new-account">
+  <li class="new-account"
+      @click="switchModal">
     <div class="new-account__icon">
       <img src="plus.svg" height="20" width="20" alt="">
     </div>
@@ -9,7 +10,12 @@
 
 <script>
   export default {
-    name: 'NewAccountButton'
+    name: 'NewAccountButton',
+    methods: {
+      switchModal () {
+        this.$store.commit('switchModal')
+      }
+    }
   }
 </script>
 
@@ -23,6 +29,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    cursor: pointer;
   }
 
   .new-account__icon {
