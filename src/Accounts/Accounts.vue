@@ -1,8 +1,9 @@
 <template>
   <ul class="accounts">
     <Account
-      v-for="account in this.$store.state.accounts"
+      v-for="(account, index) in this.$store.state.accounts"
       :account="account"
+      :index="index"
     ></Account>
     <newAccount></newAccount>
   </ul>

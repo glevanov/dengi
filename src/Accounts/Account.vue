@@ -9,20 +9,29 @@
           <p class="account__type">{{ account.type }}</p>
         </div>
       </div>
+      <button class="account__delete"
+              @click="deleteAccount"
+      >
+        <img src="plus.svg" height="20" width="20" alt="">
+      </button>
     </div>
   </li>
 </template>
 
 <script>
-  import {formatNum} from '../currency.js'
+  import { formatNum } from '../currency.js'
 
   export default {
     props: [
-      'account'
+      'account',
+      'index'
     ],
     name: 'Account',
     methods: {
-      formatNum
+      formatNum,
+      deleteAccount() {
+        this.$store.commit('deleteAccount', this.index)
+      }
     }
   }
 </script>
@@ -80,5 +89,18 @@
     margin: 0;
     font-size: 14px;
     opacity: 0.5;
+  }
+
+  .account__delete {
+    margin-left: auto;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: #4287f5;
+    display: flex;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(45deg);
   }
 </style>

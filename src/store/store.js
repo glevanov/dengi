@@ -4,6 +4,11 @@ import Vuex from 'vuex';
 Vue.use(Vuex);
 
 export default new Vuex.Store({
+  mutations: {
+    deleteAccount: (state, index) => {
+      state.accounts.splice(index, 1)
+    }
+  },
   state: {
     rates: {
       USD: 69.4706,
