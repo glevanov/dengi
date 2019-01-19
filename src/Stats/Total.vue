@@ -12,22 +12,18 @@
     name: 'Total',
     computed: {
       totalRUB () {
-        return getTotalRUB(this.accounts)
+        return getTotalRUB(this.$store.state.accounts)
       },
       totalUSD () {
-        return getTotalUSD(this.accounts, this.rates.USD)
+        return getTotalUSD(this.$store.state.accounts, this.$store.state.rates.USD)
       },
       totalEUR () {
-        return getTotalEUR(this.accounts, this.rates.EUR)
+        return getTotalEUR(this.$store.state.accounts, this.$store.state.rates.EUR)
       },
       total () {
         return this.totalRUB + this.totalUSD + this.totalEUR
       }
     },
-    props: [
-      'accounts',
-      'rates'
-    ],
     methods: {
       formatNum
     }

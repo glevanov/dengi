@@ -1,16 +1,13 @@
 <template>
   <div class="rates">
-    <p class="rates__rate">USD: <span class="rates__value">{{ rates.USD }}</span></p>
-    <p class="rates__rate">EUR: <span class="rates__value">{{ rates.EUR }}</span></p>
+    <p class="rates__rate">USD: <span class="rates__value">{{ this.$store.state.rates.USD }}</span></p>
+    <p class="rates__rate">EUR: <span class="rates__value">{{ this.$store.state.rates.EUR }}</span></p>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'Rates',
-    props: [
-      'rates'
-    ]
+    name: 'Rates'
   }
 </script>
 

@@ -1,7 +1,7 @@
 <template>
   <ul class="accounts">
     <Account
-      v-for="account in accounts"
+      v-for="account in this.$store.state.accounts"
       :account="account"
     ></Account>
     <newAccount></newAccount>
@@ -17,10 +17,7 @@
     components: {
       Account,
       newAccount
-    },
-    props: [
-      'accounts'
-    ]
+    }
   }
 </script>
 
