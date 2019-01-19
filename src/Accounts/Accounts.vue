@@ -1,23 +1,23 @@
 <template>
   <ul class="accounts">
-    <Account
+    <account
       v-for="(account, index) in this.$store.state.accounts"
       :account="account"
       :index="index"
-    ></Account>
-    <newAccount></newAccount>
+    ></account>
+    <new-account-button></new-account-button>
   </ul>
 </template>
 
 <script>
   import Account from './Account.vue'
-  import newAccount from './newAccount.vue'
+  import NewAccountButton from './NewAccountButton.vue'
 
   export default {
     name: 'Accounts',
     components: {
       Account,
-      newAccount
+      NewAccountButton
     }
   }
 </script>

@@ -1,7 +1,7 @@
 <template>
   <div class="stats">
     <img class="stats__image" src="./circle.svg" alt="График всех активов">
-    <Total></Total>
+    <total></total>
   </div>
 </template>
 

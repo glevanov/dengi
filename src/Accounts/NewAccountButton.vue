@@ -9,7 +9,7 @@
 
 <script>
   export default {
-    name: 'newAccount'
+    name: 'NewAccountButton'
   }
 </script>
 
