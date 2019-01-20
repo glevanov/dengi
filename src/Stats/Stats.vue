@@ -1,17 +1,19 @@
 <template>
   <div class="stats">
-    <img class="stats__image" src="./circle.svg" alt="График всех активов">
+    <chart></chart>
     <total></total>
   </div>
 </template>
 
 <script>
   import Total from './Total.vue'
+  import Chart from './Chart.vue'
 
   export default {
     name: 'Stats',
     components: {
-      Total
+      Total,
+      Chart
     }
   }
 </script>

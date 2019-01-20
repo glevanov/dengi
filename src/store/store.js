@@ -15,7 +15,7 @@ export default new Vuex.Store({
     },
     addAccount(state, data) {
       state.accounts.push(data);
-    }
+    },
   },
   state: {
     rates: {

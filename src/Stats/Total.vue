@@ -2,6 +2,9 @@
   <div class="total">
     <p class="total__title">итого:</p>
     <p class="total__value">₽ {{ formatNum(total) }}</p>
+    <p class="total__title">RUB {{ formatNum(totalRUB / total * 100)}}%</p>
+    <p class="total__title">USD {{ formatNum(totalUSD / total * 100) }}%</p>
+    <p class="total__title">EUR {{ formatNum(totalEUR / total * 100) }}%</p>
   </div>
 </template>
 
