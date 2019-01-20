@@ -1,6 +1,11 @@
 <template>
   <div class="container">
-    <canvas id="currencyChart"></canvas>
+    <canvas id="currencyChart"
+            v-show="accountsLength > 0"></canvas>
+    <div class="placeholder"
+         v-if="accountsLength === 0">
+      <p class="placeholder__text">Нет данных для отображения графика</p>
+    </div>
   </div>
 </template>
 
@@ -18,6 +23,9 @@
       },
       percentageEUR () {
         return this.$store.getters.getPercentageEUR
+      },
+      accountsLength () {
+        return this.$store.getters.getAccountLength
       }
     },
     watch: {
@@ -28,6 +36,9 @@
         this.createChart()
       },
       percentageEUR () {
+        this.createChart()
+      },
+      accountsLength () {
         this.createChart()
       }
     },
@@ -72,5 +83,12 @@
   .container {
     width: 100%;
     position: relative;
+  }
+
+  .placeholder__text {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: rgba(0, 0, 0, 0.3);
   }
 </style>

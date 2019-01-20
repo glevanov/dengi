@@ -28,6 +28,7 @@ export default new Vuex.Store({
     getPercentageRUB: (state, getters) => getPercentage(getters.getTotalRUB, getters.getTotal),
     getPercentageUSD: (state, getters) => getPercentage(getters.getTotalUSD, getters.getTotal),
     getPercentageEUR: (state, getters) => getPercentage(getters.getTotalEUR, getters.getTotal),
+    getAccountLength: state => state.accounts.length,
   },
   state: {
     rates: {
@@ -36,42 +37,45 @@ export default new Vuex.Store({
     },
     isAccountModalVisible: false,
     accounts: [
-      {
-        currency: 'RUB',
-        custodian: 'Тиньков',
-        type: 'Вклад',
-        value: 1400000,
-      },
-      {
-        currency: 'RUB',
-        custodian: 'Альфа',
-        type: 'Вклад',
-        value: 1034102.45,
-      },
-      {
-        currency: 'USD',
-        custodian: 'Альфа',
-        type: 'ETF',
-        value: 10223.11,
-      },
-      {
-        currency: 'USD',
-        custodian: 'Тиньков',
-        type: 'Вклад',
-        value: 1031.07,
-      },
-      {
-        currency: 'EUR',
-        custodian: 'Открытие',
-        type: 'Вклад',
-        value: 2030.81,
-      },
-      {
-        currency: 'EUR',
-        custodian: 'МКБ',
-        type: 'Вклад',
-        value: 304.37,
-      },
+
     ],
   },
 });
+
+/*
+{
+  currency: 'RUB',
+    custodian: 'Тиньков',
+  type: 'Вклад',
+  value: 1400000,
+},
+{
+  currency: 'RUB',
+    custodian: 'Альфа',
+  type: 'Вклад',
+  value: 1034102.45,
+},
+{
+  currency: 'USD',
+    custodian: 'Альфа',
+  type: 'ETF',
+  value: 10223.11,
+},
+{
+  currency: 'USD',
+    custodian: 'Тиньков',
+  type: 'Вклад',
+  value: 1031.07,
+},
+{
+  currency: 'EUR',
+    custodian: 'Открытие',
+  type: 'Вклад',
+  value: 2030.81,
+},
+{
+  currency: 'EUR',
+    custodian: 'МКБ',
+  type: 'Вклад',
+  value: 304.37,
+},*/

@@ -18,17 +18,28 @@
           </li>
           <li class="fields__field">
             <label for="value">Сумма</label>
-            <input type="number" step="0.01" id="value" autocomplete="off" required
+            <input type="number"
+                   step="0.01"
+                   id="value"
+                   autocomplete="off"
+                   min="0"
+                   required
                    v-model="value">
           </li>
           <li class="fields__field">
             <label for="custodian">Место хранения</label>
-            <input type="text" id="custodian" autocomplete="off" required
+            <input type="text"
+                   id="custodian"
+                   autocomplete="off"
+                   required
                    v-model="custodian">
           </li>
           <li class="fields__field">
             <label for="type">Вид актива</label>
-            <input type="text" id="type" autocomplete="off" required
+            <input type="text"
+                   id="type"
+                   autocomplete="off"
+                   required
                    v-model="type">
           </li>
         </ul>

@@ -99,18 +99,21 @@
     font-size: 18px;
     font-weight: bold;
     color: #000000;
+    word-break: break-all;
   }
 
   .account__name {
     margin: 0;
     font-size: 14px;
     margin-right: 5px;
+    word-break: break-all;
   }
 
   .account__type {
     margin: 0;
     font-size: 14px;
     opacity: 0.5;
+    word-break: break-all;
   }
 
   .account__delete {
@@ -124,5 +127,6 @@
     align-items: center;
     justify-content: center;
     transform: rotate(45deg);
+    flex-shrink: 0;
   }
 </style>

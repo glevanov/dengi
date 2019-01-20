@@ -37,6 +37,8 @@
     font-size: 32px;
     line-height: 1.2;
     color: #4287f5;
+    word-break: break-all;
+    text-align: center;
   }
 
   .total__title {

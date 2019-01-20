@@ -36,6 +36,7 @@
     background-color: #f1f2f6;
     max-width: 500px;
     position: relative;
+    min-height: 100vh;
 
     font-family: -apple-system,
     BlinkMacSystemFont,
