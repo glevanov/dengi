@@ -2,14 +2,14 @@
   <div class="total">
     <p class="total__title">итого:</p>
     <p class="total__value">₽ {{ formatNum(total) }}</p>
-    <p class="total__title">RUB {{ formatNum(totalRUB / total * 100)}}%</p>
-    <p class="total__title">USD {{ formatNum(totalUSD / total * 100) }}%</p>
-    <p class="total__title">EUR {{ formatNum(totalEUR / total * 100) }}%</p>
+    <p class="total__title">RUB {{ formatNum(getPercentage(totalRUB, total)) }}%</p>
+    <p class="total__title">USD {{ formatNum(getPercentage(totalUSD, total)) }}%</p>
+    <p class="total__title">EUR {{ formatNum(getPercentage(totalEUR, total)) }}%</p>
   </div>
 </template>
 
 <script>
-  import { formatNum, getTotalUSD, getTotalRUB, getTotalEUR } from '../currency'
+  import { formatNum, getTotalUSD, getTotalRUB, getTotalEUR, getPercentage } from '../currency'
 
   export default {
     name: 'Total',
@@ -28,7 +28,8 @@
       }
     },
     methods: {
-      formatNum
+      formatNum,
+      getPercentage
     }
   }
 </script>

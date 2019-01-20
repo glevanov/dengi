@@ -52,7 +52,4 @@
     width: 100%;
     position: relative;
   }
-
-  #currencyChart {
-  }
 </style>

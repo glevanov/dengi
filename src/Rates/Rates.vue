@@ -1,13 +1,26 @@
 <template>
   <div class="rates">
-    <p class="rates__rate">USD: <span class="rates__value">{{ this.$store.state.rates.USD }}</span></p>
-    <p class="rates__rate">EUR: <span class="rates__value">{{ this.$store.state.rates.EUR }}</span></p>
+    <p class="rates__rate">USD:
+      <span class="rates__value">
+        {{ formatNum(this.$store.state.rates.USD) }}
+      </span>
+    </p>
+    <p class="rates__rate">EUR:
+      <span class="rates__value">
+        {{ formatNum(this.$store.state.rates.EUR) }}
+      </span>
+    </p>
   </div>
 </template>
 
 <script>
+  import { formatNum } from '../currency'
+
   export default {
-    name: 'Rates'
+    name: 'Rates',
+    methods: {
+      formatNum
+    }
   }
 </script>
 
