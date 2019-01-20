@@ -9,6 +9,17 @@
 
   export default {
     name: 'Chart',
+    computed: {
+      percentageRUB () {
+        return this.$store.getters.getPercentageRUB
+      },
+      percentageUSD () {
+        return this.$store.getters.getPercentageUSD
+      },
+      percentageEUR () {
+        return this.$store.getters.getPercentageEUR
+      }
+    },
     methods: {
       createChart(chartId) {
         const ctx = document.getElementById(chartId);
@@ -16,7 +27,11 @@
           type: 'pie',
           data: {
             datasets: [{
-              data: [71.56, 22.985, 5.455],
+              data: [
+                this.percentageRUB,
+                this.percentageUSD,
+                this.percentageEUR
+              ],
               labels: [
                 'RUB',
                 'USD',

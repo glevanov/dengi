@@ -1,6 +1,9 @@
 /* eslint no-param-reassign: ["error", { "props": false }] */
 import Vue from 'vue';
 import Vuex from 'vuex';
+import {
+  getTotalUSD, getTotalRUB, getTotalEUR, getPercentage
+} from '../currency'
 
 Vue.use(Vuex);
 
@@ -16,6 +19,29 @@ export default new Vuex.Store({
     addAccount(state, data) {
       state.accounts.push(data);
     },
+  },
+  getters: {
+    getTotalRUB: state => {
+      return getTotalRUB(state.accounts)
+    },
+    getTotalUSD: state => {
+      return getTotalUSD(state.accounts, state.rates.USD)
+    },
+    getTotalEUR: state => {
+      return getTotalEUR(state.accounts, state.rates.EUR)
+    },
+    getTotal: (state, getters) => {
+      return getters.getTotalRUB + getters.getTotalUSD + getters.getTotalEUR
+    },
+    getPercentageRUB: (state, getters) => {
+      return getPercentage(getters.getTotalRUB, getters.getTotal)
+    },
+    getPercentageUSD: (state, getters) => {
+      return getPercentage(getters.getTotalUSD, getters.getTotal)
+    },
+    getPercentageEUR: (state, getters) => {
+      return getPercentage(getters.getTotalEUR, getters.getTotal)
+    }
   },
   state: {
     rates: {
