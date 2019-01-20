@@ -1,5 +1,5 @@
 const getTotal = (accounts, currency, rate) => rate * accounts
-  .filter(it => it.currency.code === currency)
+  .filter(it => it.currency === currency)
   .reduce((acc, it) => it.value + acc, 0);
 
 export const getTotalRUB = accounts => getTotal(accounts, 'RUB', 1);

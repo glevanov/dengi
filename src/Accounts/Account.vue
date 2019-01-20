@@ -1,7 +1,12 @@
 <template>
   <li class="feed__item">
     <div class="account">
-      <p class="account__icon">{{ account.currency.text }}</p>
+      <p class="account__icon"
+         :class="{
+         'account__icon--rub': (account.currency === 'RUB'),
+         'account__icon--usd': (account.currency === 'USD'),
+         'account__icon--eur': (account.currency === 'EUR')
+         }"></p>
       <div class="account__content">
         <p class="account__value">{{ formatNum(account.value) }}</p>
         <div class="account__wrap">
@@ -29,7 +34,7 @@
     name: 'Account',
     methods: {
       formatNum,
-      deleteAccount() {
+      deleteAccount () {
         this.$store.commit('deleteAccount', this.index)
       }
     }
@@ -60,6 +65,23 @@
     font-size: 26px;
     font-weight: bold;
     flex-shrink: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .account__icon--rub {
+    background-image: url("rub.svg");
+    background-size: 22px;
+  }
+
+  .account__icon--usd {
+    background-image: url("usd.svg");
+    background-size: 30px;
+  }
+
+  .account__icon--eur {
+    background-image: url("eur.svg");
+    background-size: 24px;
   }
 
   .account__content {

@@ -4,11 +4,13 @@
       <p class="lead__text">Добавить актив</p>
     </div>
     <div class="content">
-      <form>
+      <form
+        @submit.prevent="checkForm">
         <ul class="fields">
           <li class="fields__field">
             <label for="currency">Валюта</label>
-            <select name="currency" id="currency">
+            <select name="currency" id="currency" autocomplete="off" required
+                    v-model="currency">
               <option value="RUB">Рубли</option>
               <option value="USD">Доллары</option>
               <option value="EUR">Евро</option>
@@ -16,15 +18,18 @@
           </li>
           <li class="fields__field">
             <label for="value">Сумма</label>
-            <input type="number" id="value">
+            <input type="number" step="0.01" id="value" autocomplete="off" required
+                   v-model="value">
           </li>
           <li class="fields__field">
             <label for="custodian">Место хранения</label>
-            <input type="text" id="custodian">
+            <input type="text" id="custodian" autocomplete="off" required
+                   v-model="custodian">
           </li>
           <li class="fields__field">
             <label for="type">Вид актива</label>
-            <input type="text" id="type">
+            <input type="text" id="type" autocomplete="off" required
+                   v-model="type">
           </li>
         </ul>
         <div class="buttons">
@@ -32,9 +37,7 @@
                   @click="switchModal"
           >Назад
           </button>
-          <button type="submit" class="buttons__button buttons__button--add"
-                  @click.prevent="switchModal"
-          >Добавить
+          <button type="submit" class="buttons__button buttons__button--add">Добавить
           </button>
         </div>
       </form>
@@ -45,9 +48,24 @@
 <script>
   export default {
     name: 'NewAccountModal',
+    data: () => ({
+      currency: 'RUB',
+      value: null,
+      custodian: null,
+      type: null,
+    }),
     methods: {
       switchModal () {
         this.$store.commit('switchModal')
+      },
+      checkForm () {
+        this.$store.commit('addAccount', {
+          currency: this.currency,
+          value: this.value,
+          custodian: this.custodian,
+          type: this.type
+        })
+        this.switchModal()
       }
     }
   }

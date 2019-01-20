@@ -13,6 +13,9 @@ export default new Vuex.Store({
       window.scrollTo(0, 0);
       state.isAccountModalVisible = !state.isAccountModalVisible;
     },
+    addAccount(state, data) {
+      state.accounts.push(data);
+    }
   },
   state: {
     rates: {
@@ -22,55 +25,37 @@ export default new Vuex.Store({
     isAccountModalVisible: false,
     accounts: [
       {
-        currency: {
-          code: 'RUB',
-          text: '₽',
-        },
+        currency: 'RUB',
         custodian: 'Тиньков',
         type: 'Вклад',
         value: 1400000,
       },
       {
-        currency: {
-          code: 'RUB',
-          text: '₽',
-        },
+        currency: 'RUB',
         custodian: 'Альфа',
         type: 'Вклад',
         value: 1034102.45,
       },
       {
-        currency: {
-          code: 'USD',
-          text: '$',
-        },
+        currency: 'USD',
         custodian: 'Альфа',
         type: 'ETF',
         value: 10223.11,
       },
       {
-        currency: {
-          code: 'USD',
-          text: '$',
-        },
+        currency: 'USD',
         custodian: 'Тиньков',
         type: 'Вклад',
         value: 1031.07,
       },
       {
-        currency: {
-          code: 'EUR',
-          text: '€',
-        },
+        currency: 'EUR',
         custodian: 'Открытие',
         type: 'Вклад',
         value: 2030.81,
       },
       {
-        currency: {
-          code: 'EUR',
-          text: '€',
-        },
+        currency: 'EUR',
         custodian: 'МКБ',
         type: 'Вклад',
         value: 304.37,
