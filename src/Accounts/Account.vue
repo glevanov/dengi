@@ -27,10 +27,10 @@
   import { formatNum } from '../currency.js'
 
   export default {
-    props: [
-      'account',
-      'index'
-    ],
+    props: {
+      'account': Object,
+      'index': Number
+    },
     name: 'Account',
     methods: {
       formatNum,
