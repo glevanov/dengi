@@ -5,7 +5,7 @@
 </template>
 
 <script>
-  import Chart from 'chart.js';
+  import Chart from 'chart.js'
 
   export default {
     name: 'Chart',
@@ -20,9 +20,20 @@
         return this.$store.getters.getPercentageEUR
       }
     },
+    watch: {
+      percentageRUB () {
+        this.createChart()
+      },
+      percentageUSD () {
+        this.createChart()
+      },
+      percentageEUR () {
+        this.createChart()
+      }
+    },
     methods: {
-      createChart(chartId) {
-        const ctx = document.getElementById(chartId);
+      createChart () {
+        const ctx = document.getElementById('currencyChart')
         const myChart = new Chart(ctx, {
           type: 'pie',
           data: {
@@ -31,11 +42,6 @@
                 this.percentageRUB,
                 this.percentageUSD,
                 this.percentageEUR
-              ],
-              labels: [
-                'RUB',
-                'USD',
-                'EUR'
               ],
               backgroundColor: [
                 '#4287f5',
@@ -53,11 +59,11 @@
             },
             events: [],
           },
-        });
+        })
       }
     },
-    mounted() {
-      this.createChart('currencyChart');
+    mounted () {
+      this.createChart()
     }
   }
 </script>

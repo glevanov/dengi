@@ -2,8 +2,8 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import {
-  getTotalUSD, getTotalRUB, getTotalEUR, getPercentage
-} from '../currency'
+  getTotalUSD, getTotalRUB, getTotalEUR, getPercentage,
+} from '../currency';
 
 Vue.use(Vuex);
 
@@ -21,27 +21,13 @@ export default new Vuex.Store({
     },
   },
   getters: {
-    getTotalRUB: state => {
-      return getTotalRUB(state.accounts)
-    },
-    getTotalUSD: state => {
-      return getTotalUSD(state.accounts, state.rates.USD)
-    },
-    getTotalEUR: state => {
-      return getTotalEUR(state.accounts, state.rates.EUR)
-    },
-    getTotal: (state, getters) => {
-      return getters.getTotalRUB + getters.getTotalUSD + getters.getTotalEUR
-    },
-    getPercentageRUB: (state, getters) => {
-      return getPercentage(getters.getTotalRUB, getters.getTotal)
-    },
-    getPercentageUSD: (state, getters) => {
-      return getPercentage(getters.getTotalUSD, getters.getTotal)
-    },
-    getPercentageEUR: (state, getters) => {
-      return getPercentage(getters.getTotalEUR, getters.getTotal)
-    }
+    getTotalRUB: state => getTotalRUB(state.accounts),
+    getTotalUSD: state => getTotalUSD(state.accounts, state.rates.USD),
+    getTotalEUR: state => getTotalEUR(state.accounts, state.rates.EUR),
+    getTotal: (state, getters) => getters.getTotalRUB + getters.getTotalUSD + getters.getTotalEUR,
+    getPercentageRUB: (state, getters) => getPercentage(getters.getTotalRUB, getters.getTotal),
+    getPercentageUSD: (state, getters) => getPercentage(getters.getTotalUSD, getters.getTotal),
+    getPercentageEUR: (state, getters) => getPercentage(getters.getTotalEUR, getters.getTotal),
   },
   state: {
     rates: {
