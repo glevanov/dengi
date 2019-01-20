@@ -61,7 +61,7 @@
       checkForm () {
         this.$store.commit('addAccount', {
           currency: this.currency,
-          value: this.value,
+          value: parseFloat(this.value),
           custodian: this.custodian,
           type: this.type
         })
