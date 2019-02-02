@@ -1,4 +1,4 @@
-# Деньги
+# Деньги [![Build Status](https://travis-ci.org/glevanov/dengi.svg?branch=master)](https://travis-ci.org/glevanov/dengi)
 Приложение для визуализации текущих сбережений, призванное заменить учет в Excel.
 
 Демо доступно по [ссылке](https://glevanov.github.io/dengi/).
