@@ -1,6 +1,7 @@
 /* eslint no-param-reassign: ["error", { "props": false }] */
 import Vue from 'vue';
 import Vuex from 'vuex';
+import createPersistedState from 'vuex-persistedstate';
 import {
   getTotalUSD, getTotalRUB, getTotalEUR, getPercentage,
 } from '../currency';
@@ -8,6 +9,11 @@ import {
 Vue.use(Vuex);
 
 export default new Vuex.Store({
+  plugins: [
+    createPersistedState({
+      key: 'dengi',
+    }),
+  ],
   mutations: {
     deleteAccount(state, index) {
       state.accounts.splice(index, 1);

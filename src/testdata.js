@@ -34,5 +34,5 @@ export default [
     custodian: 'МКБ',
     type: 'Вклад',
     value: 304.37,
-  }
-]
+  },
+];
