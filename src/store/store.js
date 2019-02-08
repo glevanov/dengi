@@ -19,7 +19,6 @@ export default new Vuex.Store({
       state.accounts.splice(index, 1);
     },
     switchModal(state) {
-      window.scrollTo(0, 0);
       state.isAccountModalVisible = !state.isAccountModalVisible;
     },
     addAccount(state, data) {
