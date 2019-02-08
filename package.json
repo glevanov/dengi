@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "dev": "parcel src/index.html",
-    "build": "parcel build src/index.html --public-url ./",
+    "build": "parcel build src/index.html --public-url ./ --no-source-maps",
     "gh-pages": "gh-pages -d dist",
     "deploy": "npm run build && npm run gh-pages",
     "lint": "eslint . --fix",
