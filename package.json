@@ -8,6 +8,7 @@
     "gh-pages": "gh-pages -d dist",
     "deploy": "npm run build && npm run gh-pages",
     "lint": "eslint . --ext .js,.vue",
+    "lint-fix": "eslint . --ext .js,.vue --fix",
     "test": "jest"
   },
   "repository": {
@@ -22,24 +23,24 @@
   },
   "homepage": "https://github.com/glevanov/dengi#readme",
   "devDependencies": {
-    "@vue/component-compiler-utils": "^2.3.1",
+    "@vue/component-compiler-utils": "^2.5.2",
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
-    "eslint": "^5.11.0",
+    "eslint": "^5.13.0",
     "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-vue": "^5.1.0",
     "gh-pages": "^2.0.1",
     "jest": "^23.6.0",
     "jest-babel": "^1.0.1",
     "parcel-bundler": "^1.10.3",
     "parcel-plugin-clean-dist": "0.0.6",
-    "vue-template-compiler": "^2.5.22"
+    "vue-template-compiler": "^2.5.21"
   },
   "dependencies": {
     "chart.js": "^2.7.3",
     "normalize.css": "^8.0.1",
-    "vue": "^2.5.11",
+    "vue": "^2.6.4",
     "vue-hot-reload-api": "^2.3.1",
     "vuex": "^3.1.0",
     "vuex-persistedstate": "^2.5.4"
