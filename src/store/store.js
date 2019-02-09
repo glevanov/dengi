@@ -25,6 +25,10 @@ export default new Vuex.Store({
     addAccount(state, data) {
       state.accounts.push(data);
     },
+    setRates(state, rates) {
+      state.rates.USD = rates.USD;
+      state.rates.EUR = rates.EUR;
+    },
   },
   getters: {
     getTotalRUB: state => getTotalRUB(state.accounts),
@@ -38,8 +42,8 @@ export default new Vuex.Store({
   },
   state: {
     rates: {
-      USD: 69.4706,
-      EUR: 79.4605,
+      USD: 1,
+      EUR: 1,
     },
     isAccountModalVisible: false,
     accounts: [],

@@ -14,12 +14,26 @@
 </template>
 
 <script>
-  import { formatNum } from '../currency'
+import { formatNum } from '../currency';
 
   export default {
     name: 'Rates',
     methods: {
-      formatNum
+      formatNum,
+      getRates() {
+        const URL = 'https://www.cbr-xml-daily.ru/daily_json.js';
+        fetch(URL)
+          .then(response => response.json())
+          .then((data) => {
+            const USD = data.Valute.USD.Value;
+            const EUR = data.Valute.EUR.Value;
+            const result = {
+              USD,
+              EUR,
+            };
+            this.$store.commit('setRates', result);
+          });
+      },
     }
   }
 </script>

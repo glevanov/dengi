@@ -7,7 +7,7 @@
     "build": "parcel build src/index.html --public-url ./ --no-source-maps",
     "gh-pages": "gh-pages -d dist",
     "deploy": "npm run build && npm run gh-pages",
-    "lint": "eslint . --fix",
+    "lint": "eslint . --ext .js,.vue",
     "test": "jest"
   },
   "repository": {
@@ -28,13 +28,13 @@
     "eslint": "^5.11.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-vue": "^5.0.0",
+    "eslint-plugin-vue": "^5.1.0",
     "gh-pages": "^2.0.1",
     "jest": "^23.6.0",
     "jest-babel": "^1.0.1",
     "parcel-bundler": "^1.10.3",
     "parcel-plugin-clean-dist": "0.0.6",
-    "vue-template-compiler": "^2.5.21"
+    "vue-template-compiler": "^2.5.22"
   },
   "dependencies": {
     "chart.js": "^2.7.3",
