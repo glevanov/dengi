@@ -8,17 +8,17 @@
 <script>
 import { formatNum } from '../currency';
 
-  export default {
-    name: 'Total',
-    computed: {
-      total () {
-        return this.$store.getters.getTotal
-      },
+export default {
+  name: 'Total',
+  computed: {
+    total() {
+      return this.$store.getters.getTotal;
     },
-    methods: {
-      formatNum
-    }
-  }
+  },
+  methods: {
+    formatNum,
+  },
+};
 </script>
 
 <style scoped>

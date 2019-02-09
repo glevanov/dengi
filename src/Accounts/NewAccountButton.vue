@@ -9,14 +9,14 @@
 </template>
 
 <script>
-  export default {
-    name: 'NewAccountButton',
-    methods: {
-      switchModal () {
-        this.$store.commit('switchModal')
-      }
-    }
-  }
+export default {
+  name: 'NewAccountButton',
+  methods: {
+    switchModal() {
+      this.$store.commit('switchModal');
+    },
+  },
+};
 </script>
 
 <style scoped>

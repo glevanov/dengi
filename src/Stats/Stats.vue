@@ -9,13 +9,13 @@
 import Total from './Total.vue';
 import Chart from './Chart.vue';
 
-  export default {
-    name: 'Stats',
-    components: {
-      Total,
-      Chart
-    }
-  }
+export default {
+  name: 'Stats',
+  components: {
+    Total,
+    Chart,
+  },
+};
 </script>
 
 <style scoped>

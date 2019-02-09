@@ -13,13 +13,13 @@
 import Account from './Account.vue';
 import NewAccountButton from './NewAccountButton.vue';
 
-  export default {
-    name: 'Accounts',
-    components: {
-      Account,
-      NewAccountButton
-    }
-  }
+export default {
+  name: 'Accounts',
+  components: {
+    Account,
+    NewAccountButton,
+  },
+};
 </script>
 
 <style scoped>

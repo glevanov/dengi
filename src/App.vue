@@ -15,14 +15,14 @@ import Stats from './Stats/Stats.vue';
 import Rates from './Rates/Rates.vue';
 import NewAccountModal from './Accounts/NewAccountModal.vue';
 
-  export default {
-    components: {
-      NewAccountModal,
-      Rates,
-      Accounts,
-      Stats
-    }
-  }
+export default {
+  components: {
+    NewAccountModal,
+    Rates,
+    Accounts,
+    Stats,
+  },
+};
 </script>
 
 <style scoped>

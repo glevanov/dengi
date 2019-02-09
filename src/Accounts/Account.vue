@@ -26,19 +26,19 @@
 <script>
 import { formatNum } from '../currency';
 
-  export default {
-    props: {
-      'account': Object,
-      'index': Number
+export default {
+  props: {
+    account: Object,
+    index: Number,
+  },
+  name: 'Account',
+  methods: {
+    formatNum,
+    deleteAccount() {
+      this.$store.commit('deleteAccount', this.index);
     },
-    name: 'Account',
-    methods: {
-      formatNum,
-      deleteAccount () {
-        this.$store.commit('deleteAccount', this.index)
-      }
-    }
-  }
+  },
+};
 </script>
 
 <style scoped>

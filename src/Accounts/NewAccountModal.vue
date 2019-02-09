@@ -57,29 +57,29 @@
 </template>
 
 <script>
-  export default {
-    name: 'NewAccountModal',
-    data: () => ({
-      currency: 'RUB',
-      value: null,
-      custodian: null,
-      type: null,
-    }),
-    methods: {
-      switchModal () {
-        this.$store.commit('switchModal')
-      },
-      checkForm () {
-        this.$store.commit('addAccount', {
-          currency: this.currency,
-          value: parseFloat(this.value),
-          custodian: this.custodian,
-          type: this.type
-        })
-        this.switchModal()
-      }
-    }
-  }
+export default {
+  name: 'NewAccountModal',
+  data: () => ({
+    currency: 'RUB',
+    value: null,
+    custodian: null,
+    type: null,
+  }),
+  methods: {
+    switchModal() {
+      this.$store.commit('switchModal');
+    },
+    checkForm() {
+      this.$store.commit('addAccount', {
+        currency: this.currency,
+        value: parseFloat(this.value),
+        custodian: this.custodian,
+        type: this.type,
+      });
+      this.switchModal();
+    },
+  },
+};
 </script>
 
 <style scoped>
