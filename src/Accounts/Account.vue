@@ -24,7 +24,7 @@
 </template>
 
 <script>
-  import { formatNum } from '../currency.js'
+import { formatNum } from '../currency';
 
   export default {
     props: {

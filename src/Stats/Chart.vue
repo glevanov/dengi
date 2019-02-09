@@ -24,8 +24,8 @@
 </template>
 
 <script>
-  import Chart from 'chart.js'
-  import { formatNum } from '../currency'
+import Chart from 'chart.js';
+import { formatNum } from '../currency';
 
   export default {
     name: 'Chart',

@@ -6,8 +6,8 @@
 </template>
 
 <script>
-  import Total from './Total.vue'
-  import Chart from './Chart.vue'
+import Total from './Total.vue';
+import Chart from './Chart.vue';
 
   export default {
     name: 'Stats',
@@ -26,10 +26,5 @@
     margin-top: 10px;
     margin-bottom: 20px;
     width: 90%;
-  }
-
-  .stats__image {
-    width: 100%;
-    height: auto;
   }
 </style>

@@ -6,7 +6,7 @@
 </template>
 
 <script>
-  import { formatNum } from '../currency'
+import { formatNum } from '../currency';
 
   export default {
     name: 'Total',

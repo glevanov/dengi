@@ -10,10 +10,10 @@
 </template>
 
 <script>
-  import Accounts from './Accounts/Accounts.vue'
-  import Stats from './Stats/Stats.vue'
-  import Rates from './Rates/Rates.vue'
-  import NewAccountModal from './Accounts/NewAccountModal'
+import Accounts from './Accounts/Accounts.vue';
+import Stats from './Stats/Stats.vue';
+import Rates from './Rates/Rates.vue';
+import NewAccountModal from './Accounts/NewAccountModal.vue';
 
   export default {
     components: {

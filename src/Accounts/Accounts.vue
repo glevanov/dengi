@@ -10,8 +10,8 @@
 </template>
 
 <script>
-  import Account from './Account.vue'
-  import NewAccountButton from './NewAccountButton.vue'
+import Account from './Account.vue';
+import NewAccountButton from './NewAccountButton.vue';
 
   export default {
     name: 'Accounts',
