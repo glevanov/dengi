@@ -35,6 +35,9 @@ export default {
         });
     },
   },
+  beforeMount () {
+    this.getRates();
+  }
 };
 </script>
 

@@ -49,3 +49,5 @@ export default new Vuex.Store({
     accounts: [],
   },
 });
+// TODO переписать получение курсов на action
+// TODO поработать с промисами и async/await
