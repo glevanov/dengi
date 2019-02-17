@@ -25,9 +25,19 @@ export default new Vuex.Store({
     addAccount(state, data) {
       state.accounts.push(data);
     },
-    setRates(state, rates) {
-      state.rates.USD = rates.USD;
-      state.rates.EUR = rates.EUR;
+    getRates(state) {
+      const URL = 'https://www.cbr-xml-daily.ru/daily_json.js';
+      fetch(URL)
+        .then(response => response.json())
+        .then((data) => {
+          state.rates.USD = data.Valute.USD.Value;
+          state.rates.EUR = data.Valute.EUR.Value;
+        });
+    },
+  },
+  actions: {
+    getRates(context) {
+      context.commit('getRates');
     },
   },
   getters: {
@@ -49,5 +59,4 @@ export default new Vuex.Store({
     accounts: [],
   },
 });
-// TODO переписать получение курсов на action
 // TODO поработать с промисами и async/await
