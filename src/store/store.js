@@ -25,19 +25,19 @@ export default new Vuex.Store({
     addAccount(state, data) {
       state.accounts.push(data);
     },
-    getRates(state) {
-      const URL = 'https://www.cbr-xml-daily.ru/daily_json.js';
-      fetch(URL)
-        .then(response => response.json())
-        .then((data) => {
-          state.rates.USD = data.Valute.USD.Value;
-          state.rates.EUR = data.Valute.EUR.Value;
-        });
+    getRates(state, response) {
+      state.rates.USD = response.Valute.USD.Value;
+      state.rates.EUR = response.Valute.EUR.Value;
     },
   },
   actions: {
     getRates(context) {
-      context.commit('getRates');
+      const URL = 'https://www.cbr-xml-daily.ru/daily_json.js';
+      fetch(URL)
+        .then(response => response.json())
+        .then(data => {
+          context.commit('getRates', data)
+        });
     },
   },
   getters: {
@@ -59,4 +59,3 @@ export default new Vuex.Store({
     accounts: [],
   },
 });
-// TODO поработать с промисами и async/await
