@@ -35,8 +35,8 @@ export default new Vuex.Store({
       const URL = 'https://www.cbr-xml-daily.ru/daily_json.js';
       fetch(URL)
         .then(response => response.json())
-        .then(data => {
-          context.commit('getRates', data)
+        .then((data) => {
+          context.commit('getRates', data);
         });
     },
   },
