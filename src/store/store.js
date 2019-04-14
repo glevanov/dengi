@@ -1,28 +1,31 @@
 /* eslint no-param-reassign: ["error", { "props": false }] */
 import Vue from 'vue';
 import Vuex from 'vuex';
+import createPersistedState from 'vuex-persistedstate';
 import {
   getTotalUSD, getTotalRUB, getTotalEUR, getPercentage,
-} from '@/js/currency';
+} from '../currency';
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state: {
-    rates: {
-      USD: 1,
-      EUR: 1,
-    },
-    accounts: [],
-  },
+  plugins: [
+    createPersistedState({
+      key: 'dengi',
+    }),
+  ],
   mutations: {
     deleteAccount(state, index) {
       state.accounts.splice(index, 1);
     },
+    switchModal(state) {
+      window.scrollTo(0, 0);
+      state.isAccountModalVisible = !state.isAccountModalVisible;
+    },
     addAccount(state, data) {
       state.accounts.push(data);
     },
-    setRates(state, response) {
+    getRates(state, response) {
       state.rates.USD = response.Valute.USD.Value;
       state.rates.EUR = response.Valute.EUR.Value;
     },
@@ -33,7 +36,7 @@ export default new Vuex.Store({
       fetch(URL)
         .then(response => response.json())
         .then((data) => {
-          context.commit('setRates', data);
+          context.commit('getRates', data);
         });
     },
   },
@@ -46,5 +49,13 @@ export default new Vuex.Store({
     getPercentageUSD: (state, getters) => getPercentage(getters.getTotalUSD, getters.getTotal),
     getPercentageEUR: (state, getters) => getPercentage(getters.getTotalEUR, getters.getTotal),
     getAccountLength: state => state.accounts.length,
+  },
+  state: {
+    rates: {
+      USD: 1,
+      EUR: 1,
+    },
+    isAccountModalVisible: false,
+    accounts: [],
   },
 });
