@@ -2,41 +2,34 @@
   <v-container>
     <v-layout column>
       <v-card
-        class="pa-3 mb-2 mt-2 card-wrap"
+        class="pa-3 mb-2 mt-2"
+        row
       >
         <v-img
           :src="require('@/assets/icons/usd.svg')"
           height="40px"
           width="40px"
-          class="primary card-img"
-          style="border-radius: 2px"
+          class="primary"
+          style="border-radius: 50%"
         />
-        <v-flex class="align-content-start ml-2">
-          <p class="title ma-0">
-            1 234 155,35
-          </p>
-          <p class="grey--text ma-0">
-            <span>
-              Альфа-Банк
-            </span>
-            <span>
-              Депозит
-            </span>
-          </p>
-        </v-flex>
         <v-spacer />
+        <p class="title">
+          1 234 155,35
+        </p>
+        <p class="grey--text">
+          Альфа-Банк
+        </p>
+        <p class="grey--text">
+          Депозит
+        </p>
+        <v-btn class="error">
+          Удалить
+        </v-btn>
         <v-btn
-          class="primary primary--text v-btn--icon v-btn--large ma-0"
+          class="primary primary--text"
           outline
         >
-          <v-icon class="material-icons">
-            edit
-          </v-icon>
-        </v-btn>
-        <v-btn class="error v-btn--icon v-btn--large ma-0">
-          <v-icon class="material-icons">
-            close
-          </v-icon>
+          Изменить
         </v-btn>
       </v-card>
       <v-btn
@@ -54,15 +47,3 @@ export default {
   name: 'Main',
 };
 </script>
-
-<style scoped>
-  .card-wrap {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-
-  .card-img {
-    flex-grow: 0;
-  }
-</style>
