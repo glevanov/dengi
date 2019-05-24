@@ -1,11 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './Input.css'
 
 Input.propTypes = {
   label: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   type: PropTypes.string,
   step: PropTypes.number,
+  min: PropTypes.number,
   onChange: PropTypes.func.isRequired,
   value: PropTypes.oneOfType([
     PropTypes.string,
@@ -29,6 +31,7 @@ export default function Input(
     name,
     type,
     step,
+    min,
     onChange,
     value,
     required,
@@ -39,12 +42,14 @@ export default function Input(
   }) {
 
   return (
-    <label>
+    <label className={'input'}>
       {`${label}:`}
       <input
+        className={'input__field'}
         name={name}
         type={type}
         step={`${step}`}
+        min={`${min}`}
         onChange={onChange}
         value={value}
         required={required}
