@@ -1,0 +1,21 @@
+.add-account {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 10px 3px #BBDEFB;
+  padding: 10px;
+}
+
+.add-account__input {
+  width: 100%;
+}
+
+.add-account__button {
+  width: 100%;
+}
+
+.add-account__select {
+  display: flex;
+  flex-direction: column;
+}
+
+

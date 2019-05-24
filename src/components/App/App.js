@@ -3,6 +3,7 @@ import { observer } from 'mobx-react';
 import store from 'store';
 import Accounts from 'components/Accounts';
 import AddAccount from 'components/AddAccount';
+import './App.css';
 
 const App = observer(
   class App extends Component {
@@ -12,12 +13,12 @@ const App = observer(
 
     render() {
       return (
-        <>
-          <p>Your accounts:</p>
+        <div className={'app'}>
+          <p>Инвестиции:</p>
           <Accounts />
           <AddAccount />
           <button onClick={this.handleDelete}>Удалить последний счет</button>
-        </>
+        </div>
       )
     }
   }

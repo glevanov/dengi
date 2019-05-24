@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { observer } from 'mobx-react';
 import store from 'store';
 import Input from 'components/Input';
+import './AddAccount.css';
 
 const AddAccount = observer(
   class AddAccount extends Component {
@@ -37,16 +38,20 @@ const AddAccount = observer(
 
     render() {
       return (
-        <form>
+        <form className={'add-account'}>
           <Input
+            className={'add-account__input'}
             label="Сумма"
             name="amount"
             onChange={this.handleInputChange}
             value={this.state.account.amount}
             required={true}
             autoFocus={true}
+            type={'number'}
+            step={0.01}
+            min={0}
           />
-          <label>
+          <label className={'add-account__select'}>
             Валюта
             <select
               name="currency"
@@ -60,18 +65,21 @@ const AddAccount = observer(
             </select>
           </label>
           <Input
+            className={'add-account__input'}
             label="Вид инвестиции"
             name="type"
             onChange={this.handleInputChange}
             value={this.state.account.type}
           />
           <Input
+            className={'add-account__input'}
             label="Место хранения"
             name="custodian"
             onChange={this.handleInputChange}
             value={this.state.account.custodian}
           />
           <button
+            className={'add-account__add'}
             onClick={this.handleAdd}
             type={'button'}
           >
