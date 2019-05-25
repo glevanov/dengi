@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Link, Redirect } from 'react-router-dom';
 import { observer } from 'mobx-react';
 import store from 'store';
 import Input from 'components/Input';
 import './AddAccount.css';
+import emptyAccount from './emptyAccount';
 
 const AddAccount = observer(
   class AddAccount extends Component {
@@ -12,14 +14,22 @@ const AddAccount = observer(
 
       this.state = {
         account: {
-          currency: 'RUB',
-          custodian: '',
-          type: '',
-          amount: '',
+          currency: this.props.account.currency,
+          custodian: this.props.account.custodian,
+          type: this.props.account.type,
+          amount: this.props.account.amount,
         },
         readyToSubmit: false,
       };
     }
+
+    static propTypes = {
+      account: PropTypes.object,
+    };
+
+    static defaultProps = {
+      account: emptyAccount,
+    };
 
     handleInputChange = (evt) => {
       const target = evt.target;
