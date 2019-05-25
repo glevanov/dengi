@@ -1,23 +1,32 @@
 import React, { Component } from 'react';
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import { observer } from 'mobx-react';
-import store from 'store';
-import Accounts from 'components/Accounts';
+import Overview from 'components/Overview';
 import AddAccount from 'components/AddAccount';
 import './App.css';
 
 const App = observer(
   class App extends Component {
-    handleDelete = () => {
-      store.accounts = store.accounts.slice(0, -1);
-    };
-
     render() {
       return (
         <div className={'app'}>
-          <p>Инвестиции:</p>
-          <Accounts />
-          <AddAccount />
-          <button onClick={this.handleDelete}>Удалить последний счет</button>
+          <Router>
+            <Route>
+              <Switch>
+                <Route>
+                  <Route
+                    exact
+                    path="/"
+                    component={() => <Overview />}
+                  />
+                  <Route
+                    path="/add"
+                    component={() => <AddAccount />}
+                  />
+                </Route>
+              </Switch>
+            </Route>
+          </Router>
         </div>
       )
     }
