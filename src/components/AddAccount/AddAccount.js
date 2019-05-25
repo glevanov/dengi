@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link, Redirect } from 'react-router-dom';
 import { observer } from 'mobx-react';
 import store from 'store';
 import Input from 'components/Input';
@@ -16,6 +17,7 @@ const AddAccount = observer(
           type: '',
           amount: '',
         },
+        readyToSubmit: false,
       };
     }
 
@@ -34,24 +36,30 @@ const AddAccount = observer(
 
     handleAdd = () => {
       store.accounts = [...store.accounts, this.state.account];
+      this.setState({ readyToSubmit: true })
     };
 
     render() {
+      if (this.state.readyToSubmit) {
+        return <Redirect to="/" />
+      }
+
       return (
-        <form className={'add-account'}>
+        <form className="add-account">
+          <h2>Добавить счёт</h2>
           <Input
-            className={'add-account__input'}
+            className="add-account__input"
             label="Сумма"
             name="amount"
             onChange={this.handleInputChange}
             value={this.state.account.amount}
             required={true}
             autoFocus={true}
-            type={'number'}
+            type="number"
             step={0.01}
             min={0}
           />
-          <label className={'add-account__select'}>
+          <label className="add-account__select">
             Валюта
             <select
               name="currency"
@@ -65,26 +73,33 @@ const AddAccount = observer(
             </select>
           </label>
           <Input
-            className={'add-account__input'}
+            className="add-account__input"
             label="Вид инвестиции"
             name="type"
             onChange={this.handleInputChange}
             value={this.state.account.type}
           />
           <Input
-            className={'add-account__input'}
+            className="add-account__input"
             label="Место хранения"
             name="custodian"
             onChange={this.handleInputChange}
             value={this.state.account.custodian}
           />
           <button
-            className={'add-account__add'}
+            className="add-account__add"
             onClick={this.handleAdd}
-            type={'button'}
+            type="button"
           >
             Добавить счёт
           </button>
+          <Link to="/">
+            <button
+              type="button"
+            >
+              Назад
+            </button>
+          </Link>
         </form>
       )
     }
