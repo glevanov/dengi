@@ -1,35 +1,24 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
 import {Link, Redirect} from 'react-router-dom';
 import {observer} from 'mobx-react';
 import store from 'store';
 import Input from 'components/Input';
 import './EditForm.css';
-import emptyAccount from './emptyAccount';
 
 const EditForm = observer(
   class AddAccount extends Component {
     constructor(props) {
       super(props);
-
       this.state = {
         account: {
-          currency: this.props.account.currency,
-          custodian: this.props.account.custodian,
-          type: this.props.account.type,
-          amount: this.props.account.amount,
+          currency: 'RUB',
+          custodian: '',
+          type: '',
+          amount: '',
         },
         readyToSubmit: false,
       };
     }
-
-    static propTypes = {
-      account: PropTypes.object,
-    };
-
-    static defaultProps = {
-      account: emptyAccount,
-    };
 
     handleInputChange = (evt) => {
       const target = evt.target;
@@ -49,12 +38,25 @@ const EditForm = observer(
       this.setState({readyToSubmit: true})
     };
 
+    componentDidMount() {
+      // Gets initial state from store if we get an index from route
+      const index = this.props.match.params.index;
+      if (index) {
+        this.setState({
+          account: {
+            currency: store.accounts[index].currency,
+            custodian: store.accounts[index].custodian,
+            type: store.accounts[index].type,
+            amount: store.accounts[index].amount,
+          },
+        });
+      }
+    }
+
     render() {
       if (this.state.readyToSubmit) {
         return <Redirect to="/"/>
       }
-
-      console.log(this.props.match.params.index);
 
       return (
         <form className="add-account">
