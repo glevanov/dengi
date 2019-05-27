@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import { observer } from 'mobx-react';
 import Overview from 'components/Overview';
-import AddAccount from 'components/AddAccount';
+import EditForm from 'components/EditForm';
 import './App.css';
 
 const App = observer(
@@ -17,11 +17,11 @@ const App = observer(
                   <Route
                     exact
                     path="/"
-                    component={() => <Overview />}
+                    render={() => <Overview />}
                   />
                   <Route
                     path="/add"
-                    component={() => <AddAccount />}
+                    render={() => <EditForm />}
                   />
                 </Route>
               </Switch>
