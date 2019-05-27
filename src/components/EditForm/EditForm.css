@@ -1,19 +1,19 @@
-.add-account {
+.edit-form {
   display: flex;
   flex-direction: column;
   box-shadow: 0 0 10px 3px #BBDEFB;
   padding: 10px;
 }
 
-.add-account__input {
+.edit-form__input {
   width: 100%;
 }
 
-.add-account__button {
+.edit-form__button {
   width: 100%;
 }
 
-.add-account__select {
+.edit-form__select {
   display: flex;
   flex-direction: column;
 }

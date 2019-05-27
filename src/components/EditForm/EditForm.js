@@ -4,10 +4,10 @@ import { Link, Redirect } from 'react-router-dom';
 import { observer } from 'mobx-react';
 import store from 'store';
 import Input from 'components/Input';
-import './AddAccount.css';
+import './EditForm.css';
 import emptyAccount from './emptyAccount';
 
-const AddAccount = observer(
+const EditForm = observer(
   class AddAccount extends Component {
     constructor(props) {
       super(props);
@@ -116,4 +116,4 @@ const AddAccount = observer(
   }
 );
 
-export default AddAccount;
+export default EditForm;
