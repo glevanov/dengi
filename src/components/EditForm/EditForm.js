@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import { Link, Redirect } from 'react-router-dom';
-import { observer } from 'mobx-react';
+import {Link, Redirect} from 'react-router-dom';
+import {observer} from 'mobx-react';
 import store from 'store';
 import Input from 'components/Input';
 import './EditForm.css';
@@ -46,13 +46,15 @@ const EditForm = observer(
 
     handleAdd = () => {
       store.accounts = [...store.accounts, this.state.account];
-      this.setState({ readyToSubmit: true })
+      this.setState({readyToSubmit: true})
     };
 
     render() {
       if (this.state.readyToSubmit) {
-        return <Redirect to="/" />
+        return <Redirect to="/"/>
       }
+
+      console.log(this.props.match.params.index);
 
       return (
         <form className="add-account">

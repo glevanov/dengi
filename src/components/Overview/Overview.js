@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import store from 'store';
 import Accounts from 'components/Accounts';
 
@@ -11,7 +11,7 @@ const Overview = () => {
   return (
     <section>
       <h2>Инвестиции:</h2>
-      <Accounts />
+      <Accounts/>
       <button
         onClick={handleDelete}
         type="button"
