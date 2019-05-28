@@ -1,5 +1,17 @@
 .accounts {
-  box-shadow: 0 0 10px 3px #FFCDD2;
-  padding: 10px;
+  display: grid;
+  grid-gap: 15px;
+  margin: 0 0 20px;
+  padding: 0;
+
   list-style: none;
+}
+
+.accounts__item {
+  display: flex;
+  padding: 10px;
+
+  background-color: var(--color-bg-contrast);
+  border-radius: 4px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
 }

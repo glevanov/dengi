@@ -9,10 +9,16 @@ const store = observable({
       amount: 1400000,
     },
     {
-      currency: 'RUB',
+      currency: 'USD',
       custodian: 'Альфа',
       type: 'Вклад',
-      amount: 1034102.45,
+      amount: 10341.45,
+    },
+    {
+      currency: 'EUR',
+      custodian: 'Альфа',
+      type: 'Вклад',
+      amount: 3200.3,
     },
   ],
 });
