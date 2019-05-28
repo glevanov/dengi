@@ -15,7 +15,10 @@ const Accounts = observer(
         <CurrencyIcon
           currency={acc.currency}
         />
-        {acc.currency} {acc.amount} ({acc.type} в {acc.custodian})
+        <p className="accounts__text-content">
+          <span className="accounts__amount">{acc.amount}</span>
+          <span className="accounts__details">{acc.type} в {acc.custodian}</span>
+        </p>
         <EditButton index={index}/>
       </li>
     );
