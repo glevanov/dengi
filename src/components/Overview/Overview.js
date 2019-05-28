@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import store from 'store';
 import Accounts from 'components/Accounts';
+import './Overview.css';
 
 const handleDelete = () => {
   store.accounts = store.accounts.slice(0, -1);
@@ -9,8 +10,7 @@ const handleDelete = () => {
 
 const Overview = () => {
   return (
-    <section>
-      <h2>Инвестиции:</h2>
+    <section className="overview">
       <Accounts/>
       <button
         onClick={handleDelete}
