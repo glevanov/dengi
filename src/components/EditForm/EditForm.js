@@ -59,10 +59,10 @@ const EditForm = observer(
       }
 
       return (
-        <form className="add-account">
+        <form className="edit-form">
           <h2>Добавить счёт</h2>
           <Input
-            className="add-account__input"
+            className="edit-form__input"
             label="Сумма"
             name="amount"
             onChange={this.handleInputChange}
@@ -73,7 +73,7 @@ const EditForm = observer(
             step={0.01}
             min={0}
           />
-          <label className="add-account__select">
+          <label className="edit-form__select">
             Валюта
             <select
               name="currency"
@@ -87,21 +87,21 @@ const EditForm = observer(
             </select>
           </label>
           <Input
-            className="add-account__input"
+            className="edit-form__input"
             label="Вид инвестиции"
             name="type"
             onChange={this.handleInputChange}
             value={this.state.account.type}
           />
           <Input
-            className="add-account__input"
+            className="edit-form__input"
             label="Место хранения"
             name="custodian"
             onChange={this.handleInputChange}
             value={this.state.account.custodian}
           />
           <button
-            className="add-account__add"
+            className="edit-form__add"
             onClick={this.handleAdd}
             type="button"
           >
