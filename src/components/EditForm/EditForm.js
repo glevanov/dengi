@@ -34,7 +34,7 @@ const EditForm = observer(
     };
 
     handleAdd = () => {
-      store.accounts = [...store.accounts, this.state.account];
+      store.addAccount(this.state.account);
       this.setState({readyToSubmit: true})
     };
 

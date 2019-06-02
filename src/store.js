@@ -23,4 +23,15 @@ const store = observable({
   ],
 });
 
+store.deleteAccount = function (index) {
+  this.accounts = [].concat(
+    this.accounts.slice(0, index),
+    this.accounts.slice(index + 1)
+  );
+};
+
+store.addAccount = function (account) {
+  this.accounts = [...this.accounts, account];
+};
+
 export default store;
