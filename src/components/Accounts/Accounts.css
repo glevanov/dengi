@@ -1,7 +1,7 @@
 .accounts {
   display: grid;
   grid-gap: 15px;
-  margin: 0 0 20px;
+  margin: 0 0 15px;
   padding: 0;
 
   list-style: none;

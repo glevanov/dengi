@@ -1,15 +1,13 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 import Accounts from 'components/Accounts';
+import AddAccount from 'components/AddAccount';
 import './Overview.css';
 
 const Overview = () => {
   return (
     <section className="overview">
       <Accounts/>
-      <Link to="/add/">
-        Добавить счёт
-      </Link>
+      <AddAccount/>
     </section>
   )
 };
