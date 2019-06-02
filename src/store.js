@@ -4,9 +4,9 @@ const store = observable({
   accounts: [
     {
       currency: 'RUB',
-      custodian: 'Тиньков',
+      custodian: 'Константинопольский Константин Константинович',
       type: 'Вклад',
-      amount: 1400000,
+      amount: 140000000000,
     },
     {
       currency: 'USD',
