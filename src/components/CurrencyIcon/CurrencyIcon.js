@@ -1,16 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './CurrencyIcon.css'
+import Icon from 'components/Icon';
 import RUB from './RUB.svg';
 import USD from './USD.svg';
 import EUR from './EUR.svg';
 
 CurrencyIcon.propTypes = {
   currency: PropTypes.string.isRequired,
-};
-
-CurrencyIcon.defaultProps = {
-  currency: 'RUB',
 };
 
 export default function CurrencyIcon(
@@ -32,11 +28,14 @@ export default function CurrencyIcon(
   };
 
   return (
-    <div className="currency-icon">
-      <img
-        className="currency-icon__icon"
-        src={selectImage(currency)}
-        alt={`Код валюты: ${currency}`}/>
-    </div>
+    <Icon
+      children={
+        <img src={selectImage(currency)}
+             alt={`Код валюты: ${currency}`}
+             width="auto"
+             height="22"
+        />
+      }
+    />
   )
 };

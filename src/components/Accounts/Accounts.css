@@ -36,3 +36,11 @@
   opacity: 0.6;
   line-height: normal;
 }
+
+.accounts__edit {
+  margin-left: auto;
+}
+
+.accounts__delete {
+  margin-left: 10px;
+}
