@@ -30,11 +30,14 @@
   font-size: 18px;
   font-weight: 700;
   line-height: normal;
+  word-break: break-word;
 }
 
 .accounts__details {
-  opacity: 0.6;
   line-height: normal;
+  word-break: break-word;
+
+  opacity: 0.6;
 }
 
 .accounts__edit {
