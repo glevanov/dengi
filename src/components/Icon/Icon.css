@@ -1,0 +1,24 @@
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+
+  line-height: 0;
+
+  border-radius: 50%;
+}
+
+.icon--color-primary {
+  background-color: var(--color-primary);
+}
+
+.icon--color-secondary {
+  background-color: var(--color-secondary);
+}
+
+.icon--color-error {
+  background-color: var(--color-error);
+}

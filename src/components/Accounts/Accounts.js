@@ -2,7 +2,8 @@ import React from 'react';
 import {observer} from 'mobx-react';
 import store from 'store';
 import './Accounts.css'
-import EditButton from 'components/EditButton';
+import EditAccount from 'components/EditAccount';
+import DeleteAccount from 'components/DeleteAccount';
 import CurrencyIcon from 'components/CurrencyIcon'
 
 const Accounts = observer(
@@ -19,7 +20,14 @@ const Accounts = observer(
           <span className="accounts__amount">{acc.amount}</span>
           <span className="accounts__details">{acc.type} в {acc.custodian}</span>
         </p>
-        <EditButton index={index}/>
+        <EditAccount
+          elementClass={'accounts__edit'}
+          index={index}
+        />
+        <DeleteAccount
+          elementClass={'accounts__delete'}
+          index={index}
+        />
       </li>
     );
     return (
