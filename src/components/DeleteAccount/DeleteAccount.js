@@ -16,10 +16,7 @@ export default function DeleteAccount(
   }
 ) {
   const handleDelete = () => {
-    store.accounts = [].concat(
-      store.accounts.slice(0, index),
-      store.accounts.slice(index + 1)
-    );
+    store.deleteAccount(index);
   };
 
   return (
