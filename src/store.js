@@ -21,6 +21,10 @@ const store = observable({
       amount: 3200.3,
     },
   ],
+  rates: {
+    USD: 65.3834,
+    EUR: 72.8436,
+  },
 });
 
 store.deleteAccount = function (index) {
