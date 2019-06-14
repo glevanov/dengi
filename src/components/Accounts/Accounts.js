@@ -1,10 +1,11 @@
 import React from 'react';
 import {observer} from 'mobx-react';
 import store from 'store';
-import './Accounts.css'
+import './Accounts.css';
 import EditAccount from 'components/EditAccount';
 import DeleteAccount from 'components/DeleteAccount';
 import CurrencyIcon from 'components/CurrencyIcon';
+import AccountDetails from 'components/AccountDetails';
 
 const Accounts = () => {
   const list = store.accounts.map((acc, index) =>
@@ -15,10 +16,12 @@ const Accounts = () => {
       <CurrencyIcon
         currency={acc.currency}
       />
-      <p className="accounts__text-content">
-        <span className="accounts__amount">{acc.amount}</span>
-        <span className="accounts__details">{acc.type} в {acc.custodian}</span>
-      </p>
+      <AccountDetails
+        elementClass={'accounts__text-content'}
+        amount={acc.amount}
+        type={acc.type}
+        custodian={acc.custodian}
+      />
       <EditAccount
         elementClass={'accounts__edit'}
         index={index}
