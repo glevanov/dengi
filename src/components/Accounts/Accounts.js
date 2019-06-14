@@ -8,19 +8,19 @@ import CurrencyIcon from 'components/CurrencyIcon';
 import AccountDetails from 'components/AccountDetails';
 
 const Accounts = () => {
-  const list = store.accounts.map((acc, index) =>
+  const list = store.accounts.map((account, index) =>
     <li
       key={index}
       className="accounts__item"
     >
       <CurrencyIcon
-        currency={acc.currency}
+        currency={account.currency}
       />
       <AccountDetails
         elementClass={'accounts__text-content'}
-        amount={acc.amount}
-        type={acc.type}
-        custodian={acc.custodian}
+        amount={account.amount}
+        type={account.type}
+        custodian={account.custodian}
       />
       <EditAccount
         elementClass={'accounts__edit'}
