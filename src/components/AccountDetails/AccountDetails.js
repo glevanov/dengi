@@ -26,7 +26,12 @@ export default function AccountDetails(
   return (
     <p className={classes}>
       <span className="account-details__amount">{formatNum(amount)}</span>
-      <span className="account-details__details">{type} в {custodian}</span>
+      <span className="account-details__details">
+        {type && custodian
+          ? `${type} в ${custodian}`
+          : `${type}${custodian}`
+        }
+      </span>
     </p>
   )
 }
