@@ -21,23 +21,7 @@
 }
 
 .accounts__text-content {
-  display: flex;
-  flex-direction: column;
   margin: 0 0 0 10px;
-}
-
-.accounts__amount {
-  font-size: 18px;
-  font-weight: 700;
-  line-height: normal;
-  word-break: break-word;
-}
-
-.accounts__details {
-  line-height: normal;
-  word-break: break-word;
-
-  opacity: 0.6;
 }
 
 .accounts__edit {
