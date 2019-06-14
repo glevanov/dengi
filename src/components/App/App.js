@@ -8,32 +8,30 @@ import './page.css';
 import './App.css';
 import 'normalize.css';
 
-const App = observer(
-  class App extends Component {
-    render() {
-      return (
-        <div className="app">
-          <Router>
-            <Switch>
-              <Route
-                exact
-                path="/"
-                component={Overview}
-              />
-              <Route
-                path="/add"
-                component={EditForm}
-              />
-              <Route
-                path="/edit/:index"
-                component={EditForm}
-              />
-            </Switch>
-          </Router>
-        </div>
-      )
-    }
+const App = class App extends Component {
+  render() {
+    return (
+      <div className="app">
+        <Router>
+          <Switch>
+            <Route
+              exact
+              path="/"
+              component={Overview}
+            />
+            <Route
+              path="/add"
+              component={EditForm}
+            />
+            <Route
+              path="/edit/:index"
+              component={EditForm}
+            />
+          </Switch>
+        </Router>
+      </div>
+    )
   }
-);
+};
 
-export default App;
+export default observer(App);
