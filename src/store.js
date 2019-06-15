@@ -24,8 +24,8 @@ const store = {
     },
   ],
   rates: {
-    USD: 65.3834,
-    EUR: 72.8436,
+    USD: null,
+    EUR: null,
   },
 };
 
@@ -39,6 +39,16 @@ store.loadAccounts = function() {
       [...JSON.parse(localStorage.getItem(key))]
     )
   }
+};
+
+store.loadRates = function() {
+  const URL = 'https://www.cbr-xml-daily.ru/daily_json.js';
+  fetch(URL)
+    .then(response => response.json())
+    .then((data) => {
+      this.rates.USD = data.Valute.USD.Value;
+      this.rates.EUR = data.Valute.EUR.Value;
+    });
 };
 
 store.deleteAccount = function (index) {
