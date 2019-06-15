@@ -33,20 +33,25 @@ const EditForm = class AddAccount extends Component {
   };
 
   handleAdd = () => {
-    store.addAccount(this.state.account);
+    if (this.index) {
+      store.updateAccount(this.state.account, this.index);
+    } else {
+      store.addAccount(this.state.account);
+    }
     this.setState({readyToSubmit: true})
   };
 
+  index = this.props.match.params.index;
+
   componentDidMount() {
     // Gets initial state from store if we get an index from route
-    const index = this.props.match.params.index;
-    if (index) {
+    if (this.index) {
       this.setState({
         account: {
-          currency: store.accounts[index].currency,
-          custodian: store.accounts[index].custodian,
-          type: store.accounts[index].type,
-          amount: store.accounts[index].amount,
+          currency: store.accounts[this.index].currency,
+          custodian: store.accounts[this.index].custodian,
+          type: store.accounts[this.index].type,
+          amount: store.accounts[this.index].amount,
         },
       });
     }
@@ -59,7 +64,9 @@ const EditForm = class AddAccount extends Component {
 
     return (
       <form className="edit-form">
-        <h2>Добавить счёт</h2>
+        <h2>
+          {this.index ? 'Редактирование счёта' : 'Добавить счёт'}
+        </h2>
         <Input
           className="edit-form__input"
           label="Сумма"
@@ -104,7 +111,7 @@ const EditForm = class AddAccount extends Component {
           onClick={this.handleAdd}
           type="button"
         >
-          Добавить счёт
+          {this.index ? 'Сохранить изменения' : 'Добавить счёт'}
         </button>
         <Link to="/">
           <button
