@@ -38,4 +38,12 @@ store.addAccount = function (account) {
   this.accounts = [...this.accounts, account];
 };
 
+store.updateAccount = function (account, index) {
+  this.accounts = [].concat(
+    this.accounts.slice(0, index),
+    account,
+    this.accounts.slice(index + 1)
+  );
+};
+
 export default store;
