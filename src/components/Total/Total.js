@@ -16,7 +16,7 @@ export default class Total extends React.Component {
   render() {
     return (
       <section className="total">
-        <span className="total__text">Итого:</span> {this.total}
+        <span className="total__text">Итого:</span> {`₽ ${this.total}`}
       </section>
     )
   }

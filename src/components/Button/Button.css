@@ -1,0 +1,15 @@
+.button {
+  display: block;
+  padding: 10px;
+
+  border-radius: 3px;
+  background: none;
+  border: 1px solid var(--color-border);
+}
+
+.button--primary {
+  color: var(--color-text-contrast);
+
+  border-color: var(--color-primary);
+  background-color: var(--color-primary);
+}
