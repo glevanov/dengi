@@ -13,3 +13,16 @@
   border-color: var(--color-primary);
   background-color: var(--color-primary);
 }
+
+.button--account {
+  padding: 15px;
+  width: 100%;
+
+  font-weight: 700;
+  color: var(--color-text-contrast);
+  text-align: center;
+
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  border-radius: 4px;
+}

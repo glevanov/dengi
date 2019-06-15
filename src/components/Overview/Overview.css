@@ -3,3 +3,7 @@
   flex-direction: column;
   padding: 10px;
 }
+
+.overview__add-account {
+  text-decoration: none;
+}
