@@ -3,6 +3,7 @@ import {Link, Redirect} from 'react-router-dom';
 import {observer} from 'mobx-react';
 import store from 'store';
 import Input from 'components/Input';
+import Button from 'components/Button';
 import './EditForm.css';
 
 const EditForm = class AddAccount extends Component {
@@ -64,7 +65,7 @@ const EditForm = class AddAccount extends Component {
 
     return (
       <form className="edit-form">
-        <h2>
+        <h2 className="edit-form__heading">
           {this.index ? 'Редактирование счёта' : 'Добавить счёт'}
         </h2>
         <Input
@@ -82,6 +83,7 @@ const EditForm = class AddAccount extends Component {
         <label className="edit-form__select">
           Валюта
           <select
+            className="edit-form__select-field"
             name="currency"
             value={this.state.account.currency}
             required={true}
@@ -106,20 +108,22 @@ const EditForm = class AddAccount extends Component {
           onChange={this.handleInputChange}
           value={this.state.account.custodian}
         />
-        <button
-          className="edit-form__add"
-          onClick={this.handleAdd}
-          type="button"
-        >
-          {this.index ? 'Сохранить изменения' : 'Добавить счёт'}
-        </button>
-        <Link to="/">
-          <button
-            type="button"
+        <div className="edit-form__button-wrap">
+          <Link
+            to="/"
+            style={{"text-decoration": "none"}}
+            className={'edit-form__button'}
           >
-            Назад
-          </button>
-        </Link>
+            <Button
+              title={"Назад"}
+            />
+          </Link>
+          <Button
+            onClick={this.handleAdd}
+            elementClass={'edit-form__button button--primary'}
+            title={this.index ? 'Сохранить изменения' : 'Добавить счёт'}
+          />
+        </div>
       </form>
     )
   }
