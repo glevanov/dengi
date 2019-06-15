@@ -6,6 +6,10 @@ import './Total.css';
 import {getTotalRUB, getTotalUSD, getTotalEUR, formatNum} from 'currency';
 
 export default class Total extends React.Component {
+  componentDidMount() {
+    store.loadRates();
+  }
+
   get total() {
     return formatNum(
       getTotalRUB(store.accounts)
@@ -16,7 +20,12 @@ export default class Total extends React.Component {
   render() {
     return (
       <section className="total">
-        <span className="total__text">Итого:</span> {`₽ ${this.total}`}
+        <span className="total__text">Итого:</span>
+        {
+          store.rates.USD || store.rates.EUR
+            ? `₽ ${this.total}`
+            : 'Загрузка данных о курсах...'
+        }
       </section>
     )
   }
