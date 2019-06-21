@@ -1,0 +1,20 @@
+{
+  "main.css": "/dengi/static/css/main.acbab754.chunk.css",
+  "main.js": "/dengi/static/js/main.2f76d5fa.chunk.js",
+  "main.js.map": "/dengi/static/js/main.2f76d5fa.chunk.js.map",
+  "runtime~main.js": "/dengi/static/js/runtime~main.d82d2505.js",
+  "runtime~main.js.map": "/dengi/static/js/runtime~main.d82d2505.js.map",
+  "static/css/2.be2aa532.chunk.css": "/dengi/static/css/2.be2aa532.chunk.css",
+  "static/js/2.e42ebbbf.chunk.js": "/dengi/static/js/2.e42ebbbf.chunk.js",
+  "static/js/2.e42ebbbf.chunk.js.map": "/dengi/static/js/2.e42ebbbf.chunk.js.map",
+  "index.html": "/dengi/index.html",
+  "precache-manifest.daf7a1b9317081c2d62e8a3b79171f2b.js": "/dengi/precache-manifest.daf7a1b9317081c2d62e8a3b79171f2b.js",
+  "service-worker.js": "/dengi/service-worker.js",
+  "static/css/2.be2aa532.chunk.css.map": "/dengi/static/css/2.be2aa532.chunk.css.map",
+  "static/css/main.acbab754.chunk.css.map": "/dengi/static/css/main.acbab754.chunk.css.map",
+  "static/media/EUR.svg": "/dengi/static/media/EUR.1d59ac9e.svg",
+  "static/media/RUB.svg": "/dengi/static/media/RUB.a9d45a22.svg",
+  "static/media/USD.svg": "/dengi/static/media/USD.58921271.svg",
+  "static/media/delete-button.svg": "/dengi/static/media/delete-button.1e0a35ed.svg",
+  "static/media/edit-button.svg": "/dengi/static/media/edit-button.a041973f.svg"
+}
