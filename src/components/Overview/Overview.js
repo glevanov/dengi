@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {observer} from 'mobx-react';
-import {computed, decorate} from 'mobx';
+import {decorate} from 'mobx';
 import store from 'store';
 import './Overview.css';
 import Total from 'components/Total';
