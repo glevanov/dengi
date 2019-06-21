@@ -3,26 +3,7 @@ import {observable} from 'mobx/lib/mobx';
 const key = 'dengi';
 
 const store = {
-  accounts: [
-    {
-      currency: 'RUB',
-      custodian: 'Константинопольский Константин Константинович',
-      type: 'Вклад',
-      amount: 3000145.3456,
-    },
-    {
-      currency: 'USD',
-      custodian: 'Альфа',
-      type: 'Вклад',
-      amount: 10341.45,
-    },
-    {
-      currency: 'EUR',
-      custodian: 'Альфа',
-      type: 'Вклад',
-      amount: 3200.233,
-    },
-  ],
+  accounts: [],
   rates: {
     USD: null,
     EUR: null,
