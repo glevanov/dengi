@@ -5,5 +5,7 @@
 }
 
 .overview__add-account {
+  margin-bottom: 15px;
+
   text-decoration: none;
 }

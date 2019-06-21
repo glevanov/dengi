@@ -8,6 +8,7 @@ import Total from 'components/Total';
 import Accounts from 'components/Accounts';
 import Button from 'components/Button';
 import StatusMessage from 'components/StatusMessage';
+import Rates from 'components/Rates';
 
 export default class Overview extends React.Component {
   componentDidMount() {
@@ -37,6 +38,13 @@ export default class Overview extends React.Component {
             elementClass="button--account"
           />
         </Link>
+        {
+          (store.rates.USD || store.rates.EUR) &&
+            <Rates
+              USD={store.rates.USD}
+              EUR={store.rates.EUR}
+            />
+        }
       </section>
     )
   }
