@@ -3,21 +3,22 @@ import PropTypes from 'prop-types';
 import './Input.css'
 
 Input.propTypes = {
+  autoComplete: PropTypes.bool,
+  autoFocus: PropTypes.bool,
+  disabled: PropTypes.bool,
   label: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  type: PropTypes.string,
-  step: PropTypes.number,
   min: PropTypes.number,
+  name: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
+  placeholder: PropTypes.string,
+  required: PropTypes.bool,
+  readOnly: PropTypes.bool,
+  step: PropTypes.number,
+  type: PropTypes.string,
   value: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number,
   ]),
-  required: PropTypes.bool,
-  autoFocus: PropTypes.bool,
-  autoComplete: PropTypes.bool,
-  readOnly: PropTypes.bool,
-  disabled: PropTypes.bool,
 };
 
 Input.defaultProps = {
@@ -27,18 +28,19 @@ Input.defaultProps = {
 
 export default function Input(
   {
-    label,
-    name,
-    type,
-    step,
-    min,
-    onChange,
-    value,
-    required,
-    autoFocus,
     autoComplete,
-    readOnly,
+    autoFocus,
     disabled,
+    label,
+    min,
+    name,
+    onChange,
+    placeholder,
+    readOnly,
+    required,
+    step,
+    type,
+    value,
   }) {
 
   return (
@@ -57,6 +59,7 @@ export default function Input(
         autoComplete={`${autoComplete}`}
         readOnly={readOnly}
         disabled={disabled}
+        placeholder={placeholder}
       />
     </label>
   )

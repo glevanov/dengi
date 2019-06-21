@@ -100,6 +100,7 @@ const EditForm = class AddAccount extends Component {
           name="type"
           onChange={this.handleInputChange}
           value={this.state.account.type}
+          placeholder="Вклад, брокерский счёт"
         />
         <Input
           className="edit-form__input"
@@ -107,6 +108,7 @@ const EditForm = class AddAccount extends Component {
           name="custodian"
           onChange={this.handleInputChange}
           value={this.state.account.custodian}
+          placeholder="Название банка, брокера"
         />
         <div className="edit-form__button-wrap">
           <Link
