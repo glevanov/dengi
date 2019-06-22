@@ -4,24 +4,24 @@ self.__precacheManifest = [
     "url": "/dengi/static/media/edit-button.a041973f.svg"
   },
   {
-    "revision": "c16cc5044af4d6d73016",
-    "url": "/dengi/static/css/main.acbab754.chunk.css"
+    "revision": "cfdbaf3b04f6b3f56268",
+    "url": "/dengi/static/css/main.095ccb5e.chunk.css"
   },
   {
-    "revision": "97a0273508766527abc9",
-    "url": "/dengi/static/js/runtime~main.d82d2505.js"
+    "revision": "0d5841610678d42ca410",
+    "url": "/dengi/static/js/runtime~main.c784848e.js"
   },
   {
     "revision": "1d59ac9ecf33fe9fcf924c5ae6cdd2da",
     "url": "/dengi/static/media/EUR.1d59ac9e.svg"
   },
   {
-    "revision": "8945ca5902a29f726558",
-    "url": "/dengi/static/js/2.e42ebbbf.chunk.js"
+    "revision": "de386bfffbfb0a1269f7",
+    "url": "/dengi/static/js/2.7df9697e.chunk.js"
   },
   {
-    "revision": "c16cc5044af4d6d73016",
-    "url": "/dengi/static/js/main.2f76d5fa.chunk.js"
+    "revision": "cfdbaf3b04f6b3f56268",
+    "url": "/dengi/static/js/main.0341f0e6.chunk.js"
   },
   {
     "revision": "1e0a35ed52eaf2b27d9c44d565f9c747",
@@ -36,11 +36,11 @@ self.__precacheManifest = [
     "url": "/dengi/static/media/USD.58921271.svg"
   },
   {
-    "revision": "8945ca5902a29f726558",
+    "revision": "de386bfffbfb0a1269f7",
     "url": "/dengi/static/css/2.be2aa532.chunk.css"
   },
   {
-    "revision": "038cdb89735e9bb370d520dadfbffb5b",
+    "revision": "eef39778faefbd684ba1d861cb77acde",
     "url": "/dengi/index.html"
   }
 ];
