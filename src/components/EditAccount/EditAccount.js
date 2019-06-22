@@ -9,7 +9,7 @@ EditAccount.propTypes = {
   elementClass: PropTypes.string,
 };
 
-export default function EditAccount(
+function EditAccount(
   {
     index,
     elementClass,
@@ -32,4 +32,6 @@ export default function EditAccount(
       />
     </Link>
   )
-};
+}
+
+export default EditAccount;

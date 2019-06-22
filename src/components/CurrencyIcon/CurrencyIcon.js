@@ -9,7 +9,7 @@ CurrencyIcon.propTypes = {
   currency: PropTypes.string.isRequired,
 };
 
-export default function CurrencyIcon(
+function CurrencyIcon(
   {
     currency,
   }
@@ -38,4 +38,6 @@ export default function CurrencyIcon(
       }
     />
   )
-};
+}
+
+export default CurrencyIcon;

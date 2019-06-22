@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {HashRouter as Router, Route, Switch} from 'react-router-dom';
 import {observer} from 'mobx-react';
+import {decorate} from 'mobx';
 import Overview from 'components/Overview';
 import EditForm from 'components/EditForm';
 import './variables.css';
@@ -8,7 +9,7 @@ import './page.css';
 import './App.css';
 import 'normalize.css';
 
-const App = class App extends Component {
+export default class App extends Component {
   render() {
     return (
       <div className="app">
@@ -34,4 +35,6 @@ const App = class App extends Component {
   }
 };
 
-export default observer(App);
+decorate(App, {
+  App: observer,
+});

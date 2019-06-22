@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
 import {Link, Redirect} from 'react-router-dom';
 import {observer} from 'mobx-react';
+import {decorate} from 'mobx';
 import store from 'store';
 import Input from 'components/Input';
 import Button from 'components/Button';
 import './EditForm.css';
 
-const EditForm = class AddAccount extends Component {
+export default class EditForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -131,4 +132,6 @@ const EditForm = class AddAccount extends Component {
   }
 };
 
-export default observer(EditForm);
+decorate(EditForm, {
+  EditForm: observer,
+});

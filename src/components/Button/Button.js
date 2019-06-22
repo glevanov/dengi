@@ -8,7 +8,7 @@ Button.propTypes = {
   onClick: PropTypes.func,
 };
 
-export default function Button(
+function Button(
   {
     elementClass,
     onClick,
@@ -28,4 +28,6 @@ export default function Button(
       {title}
     </button>
   )
-};
+}
+
+export default Button;

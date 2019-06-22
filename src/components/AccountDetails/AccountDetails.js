@@ -10,7 +10,7 @@ AccountDetails.propTypes = {
   elementClass: PropTypes.string,
 };
 
-export default function AccountDetails(
+function AccountDetails(
   {
     amount,
     type,
@@ -35,3 +35,5 @@ export default function AccountDetails(
     </p>
   )
 }
+
+export default AccountDetails;

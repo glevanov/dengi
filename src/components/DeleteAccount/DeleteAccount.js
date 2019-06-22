@@ -9,7 +9,7 @@ DeleteAccount.propTypes = {
   elementClass: PropTypes.string,
 };
 
-export default function DeleteAccount(
+function DeleteAccount(
   {
     index,
     elementClass,
@@ -33,4 +33,6 @@ export default function DeleteAccount(
       }
     />
   )
-};
+}
+
+export default DeleteAccount;
