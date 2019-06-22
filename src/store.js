@@ -17,7 +17,12 @@ store.saveAccounts = function () {
 store.loadAccounts = function() {
   if (localStorage.getItem(key)) {
     this.accounts = [].concat(
-      [...JSON.parse(localStorage.getItem(key))]
+      [...JSON.parse(localStorage.getItem(key), function (key, value) {
+        if (key === "amount") {
+          return parseFloat(value);
+        }
+        return value;
+      })]
     )
   }
 };
