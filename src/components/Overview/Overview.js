@@ -9,6 +9,7 @@ import Accounts from 'components/Accounts';
 import Button from 'components/Button';
 import StatusMessage from 'components/StatusMessage';
 import Rates from 'components/Rates';
+import CurrencyChart from 'components/CurrencyChart';
 
 export default class Overview extends React.Component {
   componentDidMount() {
@@ -19,6 +20,10 @@ export default class Overview extends React.Component {
   render() {
     return (
       <section className="overview">
+        {
+          (store.accounts.length !== 0) &&
+            <CurrencyChart/>
+        }
         {
           (!store.rates.USD || !store.rates.EUR)
             ? <StatusMessage message="Загрузка данных о курсах..."/>
