@@ -21,13 +21,13 @@ export default class Overview extends React.Component {
     return (
       <section className="overview">
         {
-          (store.accounts.length !== 0) &&
-            <CurrencyChart/>
-        }
-        {
           (!store.rates.USD || !store.rates.EUR)
             ? <StatusMessage message="Загрузка данных о курсах..."/>
             : <Total/>
+        }
+        {
+          (store.accounts.length !== 0) &&
+          <CurrencyChart/>
         }
         {
           (store.accounts.length === 0)
