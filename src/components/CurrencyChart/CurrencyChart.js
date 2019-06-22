@@ -1,12 +1,36 @@
 import React from 'react';
+import {observer} from 'mobx-react';
+import {decorate, computed} from 'mobx';
+import store from 'store';
 import './CurrencyChart.css'
+import {getTotalRUB, getTotalUSD, getTotalEUR, formatNum, getPercentage} from 'currency';
 
 export default class CurrencyChart extends React.Component {
-  constructor(props) {
-    super(props);
-    this.percentageRUB = 25;
-    this.percentageUSD = 25;
-    this.percentageEUR = 50;
+  get total() {
+    return getTotalRUB(store.accounts)
+      + getTotalUSD(store.accounts, store.rates.USD)
+      + getTotalEUR(store.accounts, store.rates.EUR);
+  }
+
+  get percentageRUB() {
+    return getPercentage(
+      getTotalRUB(store.accounts),
+      this.total
+    );
+  }
+
+  get percentageUSD() {
+    return getPercentage(
+      getTotalUSD(store.accounts, store.rates.USD),
+      this.total
+    );
+  }
+
+  get percentageEUR() {
+    return getPercentage(
+      getTotalEUR(store.accounts, store.rates.EUR),
+      this.total
+    );
   }
 
   render() {
@@ -34,16 +58,24 @@ export default class CurrencyChart extends React.Component {
         </p>
         <p className="chart__legend">
           <span className="chart__percentage chart__percentage--rub">
-            RUB: {this.percentageRUB}%
+            RUB: {formatNum(this.percentageRUB)}%
           </span>
           <span className="chart__percentage chart__percentage--usd">
-            USD: {this.percentageUSD}%
+            USD: {formatNum(this.percentageUSD)}%
           </span>
           <span className="chart__percentage chart__percentage--eur">
-            EUR: {this.percentageEUR}%
+            EUR: {formatNum(this.percentageEUR)}%
           </span>
         </p>
       </section>
     );
   }
 }
+
+decorate(CurrencyChart, {
+  CurrencyChart: observer,
+  total: computed,
+  percentageRUB: computed,
+  percentageUSD: computed,
+  percentageEUR: computed,
+});
